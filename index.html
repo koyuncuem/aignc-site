@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIGNC Research Group — AI, Guidance, Navigation & Control | ITU Aerospace Research Center</title>
+<meta name="description" content="The AI-based Guidance, Navigation and Control Research Group (AIGNC-RG) at ITU Aerospace Research Center. Led by Prof. Dr. Emre Koyuncu. Research in aerospace autonomy, GNC, AI in aerospace, and ATM/UTM.">
+<meta property="og:title" content="AIGNC Research Group — ITU Aerospace Research Center">
+<meta property="og:description" content="Autonomy, guidance, navigation & control, AI in aerospace, and ATM/UTM research at Istanbul Technical University.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@88..112,400..750&family=Instrument+Sans:ital,wght@0,400..700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF;
+  --bg-soft:#F5F8FB;        /* alternating sections */
+  --bg-sky:linear-gradient(180deg,#EEF5FB 0%,#FFFFFF 78%);
+  --ink:#1C2833;
+  --ink-dim:#5B6B79;
+  --line:#E4EAF0;
+  --blue:#2160A8;           /* chart blue — links, structure */
+  --blue-deep:#174A85;
+  --blue-tint:#E8F0F9;
+  --magenta:#C2417F;        /* the flight-path line, used sparingly */
+  --radius:12px;
+  --maxw:1120px;
+  --font-display:"Archivo",system-ui,sans-serif;
+  --font-body:"Instrument Sans",system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono",Consolas,monospace;
+  --shadow:0 10px 30px rgba(28,40,51,.07);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{
+  font-family:var(--font-body);font-size:16.5px;line-height:1.65;
+  color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--blue);color:#fff}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:var(--font-display);line-height:1.15;letter-spacing:-.01em;color:var(--ink)}
+h2{font-size:clamp(1.6rem,3vw,2.15rem);font-weight:700;font-variation-settings:"wdth" 104}
+h3{font-size:1.05rem;font-weight:650;font-variation-settings:"wdth" 102}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px}
+section{padding:84px 0}
+.alt{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--font-mono);font-size:.7rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:14px;
+}
+.eyebrow::before{
+  content:"";width:8px;height:8px;flex:none;background:var(--magenta);
+  clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);
+}
+.sec-head{max-width:740px;margin-bottom:42px}
+.sec-head p{margin-top:12px;color:var(--ink-dim);font-size:1rem}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .65s ease,transform .65s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  #fpath{stroke-dashoffset:0 !important;animation:none !important}
+}
+
+/* ---------- nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:60;background:rgba(255,255,255,.88);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:0 28px;display:flex;align-items:center;gap:20px;height:62px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand:hover{text-decoration:none}
+.brand .mark{
+  width:30px;height:30px;border-radius:8px;background:var(--blue);
+  display:grid;place-items:center;color:#fff;
+  font-family:var(--font-mono);font-size:.6rem;font-weight:600;letter-spacing:.03em;
+}
+.brand b{font-family:var(--font-display);font-weight:700;font-size:.95rem;color:var(--ink);font-variation-settings:"wdth" 104}
+.brand small{display:block;font-size:.64rem;color:var(--ink-dim);font-weight:400;letter-spacing:.04em;margin-top:1px}
+.nav-links{display:flex;gap:2px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{
+  font-size:.82rem;font-weight:500;color:var(--ink-dim);
+  padding:8px 12px;border-radius:8px;white-space:nowrap;
+}
+.nav-links a:hover{color:var(--blue-deep);background:var(--blue-tint);text-decoration:none}
+
+/* ---------- hero ---------- */
+.hero{background:var(--bg-sky);position:relative;overflow:hidden}
+.hero-in{max-width:var(--maxw);margin:0 auto;padding:72px 28px 0;position:relative;z-index:1}
+.hero .eyebrow{color:var(--blue-deep)}
+.hero h1{
+  font-size:clamp(2rem,4.6vw,3.15rem);font-weight:730;
+  font-variation-settings:"wdth" 106;max-width:17em;
+}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero .sub{
+  margin-top:18px;max-width:44em;font-size:1.08rem;color:var(--ink-dim);
+}
+.hero .sub b{color:var(--ink);font-weight:600}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{
+  display:inline-block;font-family:var(--font-body);font-weight:600;font-size:.88rem;
+  padding:12px 22px;border-radius:10px;border:1px solid var(--line);
+  color:var(--ink);background:#fff;transition:all .2s ease;
+}
+.btn:hover{text-decoration:none;transform:translateY(-1px);border-color:var(--blue);color:var(--blue-deep);box-shadow:var(--shadow)}
+.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn.primary:hover{background:var(--blue-deep);border-color:var(--blue-deep);color:#fff}
+.hero-facts{
+  display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:30px;
+  font-family:var(--font-mono);font-size:.7rem;letter-spacing:.08em;
+  color:var(--ink-dim);text-transform:uppercase;
+}
+.hero-facts span b{color:var(--blue-deep);font-weight:500}
+
+/* hero flight-path band */
+.skyband{position:relative;margin-top:8px;height:190px}
+.skyband svg{position:absolute;inset:0;width:100%;height:100%}
+#fpath{
+  stroke:var(--magenta);stroke-width:2;fill:none;
+  stroke-dasharray:1600;stroke-dashoffset:1600;
+  animation:draw 3s .3s ease forwards;
+}
+@keyframes draw{to{stroke-dashoffset:0}}
+.gridline{stroke:#D7E3EE;stroke-width:1;stroke-dasharray:2 7}
+.wpd{fill:#fff;stroke:var(--blue);stroke-width:1.4}
+.wpt-lab{font-family:var(--font-mono);font-size:8.5px;fill:var(--ink-dim);letter-spacing:1px}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:1.35fr .85fr;gap:52px;align-items:start}
+.about-grid .lede{font-size:1.14rem;line-height:1.7}
+.about-grid p+p{margin-top:16px;color:var(--ink-dim)}
+.host-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;box-shadow:var(--shadow);
+}
+.host-card h3{font-size:.95rem;margin-bottom:12px}
+.host-card p{font-size:.88rem;color:var(--ink-dim)}
+.host-card .row{display:flex;gap:12px;padding:10px 0;border-top:1px dashed var(--line);font-size:.86rem;align-items:baseline}
+.host-card .row:first-of-type{border-top:none;padding-top:0}
+.host-card .row b{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;color:var(--blue-deep);min-width:70px;text-transform:uppercase;font-weight:500}
+
+/* ---------- research ---------- */
+.themes{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.theme{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:28px;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+}
+.theme:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#CBD9E6}
+.theme .num{
+  font-family:var(--font-mono);font-size:.66rem;letter-spacing:.14em;color:var(--magenta);
+  text-transform:uppercase;
+}
+.theme h3{font-size:1.18rem;margin:8px 0 8px}
+.theme>p{font-size:.92rem;color:var(--ink-dim);margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chips span{
+  font-size:.76rem;font-weight:500;color:var(--blue-deep);
+  background:var(--blue-tint);border-radius:99px;padding:5px 11px;
+}
+
+/* ---------- projects ---------- */
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.proj{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;display:flex;flex-direction:column;gap:10px;
+  transition:transform .22s ease,box-shadow .22s ease;
+}
+.proj:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.proj .top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.proj .funder{
+  font-family:var(--font-mono);font-size:.62rem;font-weight:500;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue-deep);
+  background:var(--blue-tint);border-radius:99px;padding:4px 10px;
+}
+.proj .status{
+  font-family:var(--font-mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-dim);display:inline-flex;align-items:center;gap:6px;
+}
+.proj .status::before{content:"";width:7px;height:7px;border-radius:50%;background:#B9C7D4}
+.proj .status.active::before{background:#3FA26A}
+.proj .status.active{color:#2C7A50}
+.proj h3{font-size:1.02rem}
+.proj p{font-size:.88rem;color:var(--ink-dim)}
+.partners{
+  margin-top:42px;padding-top:26px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 28px;
+}
+.partners .lbl{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim)}
+.partners span{font-family:var(--font-display);font-variation-settings:"wdth" 103;font-weight:600;font-size:.9rem;color:#8496A6}
+
+/* ---------- team ---------- */
+.leader{
+  display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:start;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:28px;box-shadow:var(--shadow);margin-bottom:34px;
+}
+.avatar{
+  width:86px;height:86px;border-radius:50%;flex:none;
+  background:var(--blue);color:#fff;display:grid;place-items:center;
+  font-family:var(--font-display);font-weight:700;font-size:1.6rem;
+}
+.avatar.sm{width:52px;height:52px;font-size:1rem}
+.leader h3{font-size:1.3rem}
+.leader .role{color:var(--magenta);font-weight:600;font-size:.88rem;margin:3px 0 10px}
+.leader p{font-size:.93rem;color:var(--ink-dim);max-width:56em}
+.leader .creds{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.leader .creds span{
+  font-size:.74rem;font-weight:500;color:var(--ink-dim);
+  border:1px solid var(--line);border-radius:99px;padding:4px 11px;
+}
+.leader .links{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;font-size:.85rem;font-weight:500}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.member{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px;display:flex;gap:14px;align-items:flex-start;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.member:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.member h4{font-family:var(--font-display);font-variation-settings:"wdth" 102;font-size:.95rem;font-weight:650}
+.member .deg{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-deep);margin:2px 0 6px}
+.member p{font-size:.8rem;color:var(--ink-dim);line-height:1.5}
+.alumni{margin-top:40px;padding-top:28px;border-top:1px solid var(--line)}
+.alumni h3{margin-bottom:14px}
+.alumni-row{display:flex;flex-wrap:wrap;gap:9px}
+.alumni-row span{
+  font-size:.8rem;color:var(--ink-dim);background:#fff;border:1px solid var(--line);
+  border-radius:99px;padding:7px 14px;
+}
+.alumni-row b{color:var(--ink);font-weight:600}
+.team-note{margin-top:18px;font-size:.82rem;color:var(--ink-dim)}
+
+/* ---------- publications ---------- */
+.pub-list{border-top:1px solid var(--line)}
+.pub{
+  display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;
+  padding:18px 4px;border-bottom:1px solid var(--line);
+}
+.pub .yr{font-family:var(--font-mono);font-size:.78rem;font-weight:500;color:var(--magenta)}
+.pub h3{font-size:1rem;font-weight:600;line-height:1.45;font-variation-settings:"wdth" 100}
+.pub .auth{font-size:.83rem;color:var(--ink-dim);margin-top:3px}
+.pub .venue{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.04em;color:var(--blue-deep);text-align:right;max-width:220px}
+.pub-foot{margin-top:20px;font-size:.9rem;color:var(--ink-dim)}
+
+/* ---------- facilities ---------- */
+.fac-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.fac{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;
+}
+.fac .loc{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--magenta);margin-bottom:8px}
+.fac h3{font-size:1.05rem;margin-bottom:8px}
+.fac p{font-size:.88rem;color:var(--ink-dim)}
+
+/* ---------- join ---------- */
+.join-in{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.join-in p{color:var(--ink-dim);margin-top:12px;max-width:36em}
+.join-topics{display:flex;flex-wrap:wrap;gap:8px}
+.join-topics span{
+  font-size:.78rem;font-weight:500;background:#fff;border:1px solid var(--line);
+  border-radius:99px;padding:7px 13px;color:var(--ink-dim);
+}
+
+/* ---------- contact ---------- */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.contact .block h3{font-family:var(--font-mono);font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:12px}
+.contact .block p{color:var(--ink-dim);font-size:.94rem}
+.contact .mail{font-family:var(--font-mono);font-size:.98rem}
+.linkrow{display:flex;flex-wrap:wrap;gap:9px;margin-top:6px}
+.linkrow a{
+  font-size:.82rem;font-weight:500;border:1px solid var(--line);border-radius:9px;
+  padding:9px 14px;color:var(--ink);background:#fff;
+}
+.linkrow a:hover{border-color:var(--blue);color:var(--blue-deep);text-decoration:none}
+.foot{
+  border-top:1px solid var(--line);margin-top:64px;padding:24px 0 4px;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-family:var(--font-mono);font-size:.66rem;letter-spacing:.1em;
+  color:var(--ink-dim);text-transform:uppercase;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:960px){
+  .themes,.contact-grid,.join-in,.about-grid{grid-template-columns:1fr;gap:34px}
+  .projects-grid,.fac-grid,.team-grid{grid-template-columns:1fr 1fr}
+  .skyband{height:150px}
+}
+@media (max-width:620px){
+  section{padding:60px 0}
+  .wrap{padding:0 20px}
+  .nav-in{padding:0 20px;gap:12px}
+  .brand small{display:none}
+  .projects-grid,.fac-grid,.team-grid{grid-template-columns:1fr}
+  .leader{grid-template-columns:1fr}
+  .pub{grid-template-columns:52px 1fr}
+  .pub .venue{grid-column:2;text-align:left;max-width:none;margin-top:2px}
+  .skyband{height:120px}
+}
+</style>
+</head>
+<body>
+
+<!-- ═════════ NAV ═════════ -->
+<nav class="nav" aria-label="Primary">
+  <div class="nav-in">
+    <a class="brand" href="#top">
+      <span class="mark">AI</span>
+      <span><b>AIGNC Research Group</b><small>ITU Aerospace Research Center</small></span>
+    </a>
+    <div class="nav-links">
+      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
+      <a href="#team">Team</a>
+      <a href="#publications">Publications</a>
+      <a href="#facilities">Labs</a>
+      <a href="#join">Join</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═════════ HERO ═════════ -->
+<header class="hero" id="top">
+  <div class="hero-in">
+    <p class="eyebrow">Istanbul Technical University · Aerospace Research Center</p>
+    <h1>AI-based Guidance, Navigation <em>&amp;</em> Control Research Group</h1>
+    <p class="sub">
+      We make aerospace systems <b>intelligent and trustworthy</b> — from the inner control loop of a
+      single agile aircraft to the traffic management of an entire airspace. The group is led by
+      <b>Prof. Dr. Emre Koyuncu</b>, Director of the ITU Aerospace Research Center.
+    </p>
+    <div class="hero-ctas">
+      <a class="btn primary" href="#research">Explore our research</a>
+      <a class="btn" href="#join">Join the group</a>
+    </div>
+    <div class="hero-facts">
+      <span><b>Est. within</b> ITU ARC</span>
+      <span><b>Focus</b> Autonomy · GNC · AI · ATM/UTM</span>
+      <span><b>Funded by</b> SESAR JU · ASELSAN · TÜBİTAK · Industry</span>
+    </div>
+  </div>
+
+  <!-- flight-path band: research themes as waypoints -->
+  <div class="skyband" aria-hidden="true">
+    <svg viewBox="0 0 1200 190" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+      <line class="gridline" x1="0" y1="60"  x2="1200" y2="60"/>
+      <line class="gridline" x1="0" y1="120" x2="1200" y2="120"/>
+      <path id="fpath" d="M-20 160 C 160 150, 240 96, 380 92 S 610 118, 760 84 S 1010 40, 1230 52"/>
+      <g>
+        <path class="wpd" d="M240 105 l7 7 -7 7 -7 -7 z"/>
+        <text class="wpt-lab" x="240" y="148" text-anchor="middle">GNC</text>
+        <path class="wpd" d="M525 90 l7 7 -7 7 -7 -7 z"/>
+        <text class="wpt-lab" x="525" y="133" text-anchor="middle">AUTONOMY</text>
+        <path class="wpd" d="M810 66 l7 7 -7 7 -7 -7 z"/>
+        <text class="wpt-lab" x="810" y="109" text-anchor="middle">AI</text>
+        <path class="wpd" d="M1095 40 l7 7 -7 7 -7 -7 z"/>
+        <text class="wpt-lab" x="1095" y="83" text-anchor="middle">ATM/UTM</text>
+      </g>
+      <g id="plane">
+        <path d="M0 -5 L11 0 L0 5 L2.5 0 Z" fill="#C2417F"/>
+        <animateMotion id="planeMotion" dur="16s" repeatCount="indefinite" rotate="auto" begin="1s">
+          <mpath href="#fpath"/>
+        </animateMotion>
+      </g>
+    </svg>
+  </div>
+</header>
+
+<!-- ═════════ ABOUT ═════════ -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="reveal">
+        <p class="eyebrow">Who we are</p>
+        <h2>Where control theory meets machine intelligence — and flies</h2>
+        <p class="lede" style="margin-top:16px">
+          AIGNC-RG is a research group of the ITU Aerospace Research Center, working at the
+          intersection of optimization-based control, reinforcement learning, and probability
+          theory for high-performance aerospace systems.
+        </p>
+        <p>
+          Our research spans highly agile unmanned aerial vehicles, GPS-denied navigation, flight
+          trajectory optimization, airborne conflict detection and resolution, and high-level
+          autonomy in air traffic management — carried from theory through simulation to flight
+          test. We collaborate closely with European ATM research programs and Türkiye's leading
+          aerospace industry.
+        </p>
+        <p>
+          The group runs the AIGNC Lab and the Cyber Airspace Lab at ITU's Ayazağa campus, and
+          contributes faculty and researchers to national and international programs on U-space,
+          advanced air mobility, and autonomous flight.
+        </p>
+      </div>
+      <aside class="host-card reveal" aria-label="At a glance">
+        <h3>At a glance</h3>
+        <div class="row"><b>Host</b><span>ITU Aerospace Research Center (ITU ARC)</span></div>
+        <div class="row"><b>Leader</b><span>Prof. Dr. Emre Koyuncu</span></div>
+        <div class="row"><b>Labs</b><span>AIGNC Lab · Cyber Airspace Lab</span></div>
+        <div class="row"><b>Campus</b><span>ITU Ayazağa, Maslak, Istanbul</span></div>
+        <div class="row"><b>Programs</b><span>SESAR 3 JU · Erasmus+ CoVE · ASELSAN · TÜBİTAK</span></div>
+        <div class="row"><b>Alumni at</b><span>Cranfield · Torc Robotics · UW · industry &amp; academia</span></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ RESEARCH ═════════ -->
+<section id="research" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Research</p>
+      <h2>Four research lines, one autonomy stack</h2>
+      <p>Every topic below is an active thread in the group — each carried by graduate researchers
+      from formulation to flight-ready implementation.</p>
+    </div>
+    <div class="themes">
+      <article class="theme reveal">
+        <span class="num">Line 01</span>
+        <h3>Guidance &amp; Flight Control</h3>
+        <p>Optimization-based and learning-based control for agile flight — keeping high-performance
+        vehicles safe at the edge of their envelope.</p>
+        <div class="chips">
+          <span>Model predictive control</span><span>Agile guidance algorithms</span>
+          <span>Optimal trajectory generation</span><span>Flight envelope protection</span>
+          <span>Auto-GCAS</span><span>Terrain following control</span>
+          <span>Impact time/angle control</span><span>Integral RL control</span>
+          <span>System-ID-based control</span>
+        </div>
+      </article>
+      <article class="theme reveal">
+        <span class="num">Line 02</span>
+        <h3>Intelligent Navigation</h3>
+        <p>Navigation that survives losing GPS — visual, inertial, terrain-referenced, and
+        collaborative approaches for single vehicles and teams.</p>
+        <div class="chips">
+          <span>Visual-inertial navigation</span><span>Visual-guided control</span>
+          <span>Terrain-referenced navigation</span><span>Collaborative navigation</span>
+          <span>GPS-denied operations</span><span>Visual pursuit guidance</span>
+        </div>
+      </article>
+      <article class="theme reveal">
+        <span class="num">Line 03</span>
+        <h3>Airspace Autonomy — ATM / UTM</h3>
+        <p>High-level autonomy for the airspace itself: from AI-driven traffic network models to
+        automated U-space services for uncrewed aviation.</p>
+        <div class="chips">
+          <span>AI-driven air traffic network models</span><span>Airspace complexity modelling</span>
+          <span>Dynamic sectorization</span><span>Autonomous flight-plan approval</span>
+          <span>Strategic deconfliction</span><span>4D trajectory management</span>
+          <span>Network resilience</span><span>Turnaround visual intelligence</span>
+        </div>
+      </article>
+      <article class="theme reveal">
+        <span class="num">Line 04</span>
+        <h3>Mission Autonomy &amp; AI Teaming</h3>
+        <p>Multi-agent decision-making where machines cooperate, compete, and share control
+        authority with humans — in simulation and on real platforms.</p>
+        <div class="chips">
+          <span>RL-based air combat simulation</span><span>Air combat modelling</span>
+          <span>Control authority sharing</span><span>Collaborative / competitive agents</span>
+          <span>Human–AI teaming</span><span>Swarm autonomy</span>
+          <span>Data-driven predictive maintenance</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ PROJECTS ═════════ -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Projects</p>
+      <h2>Research that reaches the field</h2>
+      <p>European ATM and U-space programs, national defense projects, and airline-scale data
+      platforms — selected work from the group's portfolio.</p>
+    </div>
+    <div class="projects-grid">
+      <article class="proj reveal">
+        <div class="top"><span class="funder">SESAR 3 JU</span><span class="status active">Active</span></div>
+        <h3>AI for U-space Services</h3>
+        <p>European consortium research on AI-enabled U-space: automated drone flight-plan approval,
+        risk assessment, and strategic deconfliction for dense urban airspace.</p>
+      </article>
+      <article class="proj reveal">
+        <div class="top"><span class="funder">Erasmus+ CoVE</span><span class="status active">Active</span></div>
+        <h3>AIRMOB — Advanced Air Mobility</h3>
+        <p>Türkiye lead of the AIRMOB Centre of Vocational Excellence, building the skills and
+        training ecosystem for advanced air mobility across Europe and Türkiye.</p>
+      </article>
+      <article class="proj reveal">
+        <div class="top"><span class="funder">ASELSAN</span><span class="status">Completed</span></div>
+        <h3>Bal-UAV — Shape-shifting UAVs</h3>
+        <p>Ballistically launchable UAVs that change their physical configuration in flight —
+        developed and flight-demonstrated at ITU ARC.</p>
+      </article>
+      <article class="proj reveal">
+        <div class="top"><span class="funder">Industry</span><span class="status active">Active</span></div>
+        <h3>Autonomy with Turkish Aerospace</h3>
+        <p>Collaborative autonomy and GNC research with Turkish Aerospace — recognized with ITU's
+        2025 University–Industry Collaboration Award.</p>
+      </article>
+      <article class="proj reveal">
+        <div class="top"><span class="funder">Airlines &amp; Airports</span><span class="status">Completed</span></div>
+        <h3>Data-driven Flight Operations</h3>
+        <p>Trajectory, delay, and network analytics with Turkish Airlines and iGA Istanbul Airport —
+        large-scale flight data applied to efficiency and resilience.</p>
+      </article>
+      <article class="proj reveal">
+        <div class="top"><span class="funder">Flight Deck</span><span class="status">Completed</span></div>
+        <h3>AUTOFLY-Aid</h3>
+        <p>Flight-deck automation support with dynamic 4D trajectory management for responsive,
+        adaptive airborne collision avoidance.</p>
+      </article>
+    </div>
+    <div class="partners reveal">
+      <span class="lbl">Funders &amp; partners</span>
+      <span>SESAR JU</span><span>Boeing</span><span>ASELSAN</span><span>Turkish Aerospace</span>
+      <span>HAVELSAN</span><span>STM</span><span>TÜBİTAK</span><span>Turkish Airlines</span><span>iGA</span><span>EUROCONTROL</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ TEAM ═════════ -->
+<section id="team" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Team</p>
+      <h2>The people flying the group</h2>
+    </div>
+
+    <!-- leader -->
+    <article class="leader reveal">
+      <div class="avatar" aria-hidden="true">EK</div>
+      <div>
+        <h3>Prof. Dr. Emre Koyuncu</h3>
+        <p class="role">Group Leader · Director, ITU Aerospace Research Center</p>
+        <p>
+          Professor of Aeronautical Engineering at ITU and CTO of CORVUS Advanced Technologies.
+          Formerly a visiting researcher at Boeing Research &amp; Technology Europe and MIT
+          AeroAstro; Ph.D. in Aerospace Engineering (ITU, 2015) as a SESAR JU HALA! fellow. His
+          research bridges optimization-based control, reinforcement learning, and airspace-scale
+          autonomy — and the group is built in that image.
+        </p>
+        <div class="creds">
+          <span>AIAA Associate Fellow</span><span>IEEE Senior Member</span>
+          <span>Assoc. Editor, IEEE Access</span><span>Boeing Early Career Grant '15</span>
+          <span>ITU Univ.–Industry Award '25</span>
+        </div>
+        <div class="links">
+          <a href="https://scholar.google.com/citations?user=b13mKdoAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://orcid.org/0000-0002-0726-4979" target="_blank" rel="noopener">ORCID</a>
+          <a href="https://www.linkedin.com/in/koyuncue/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://research.itu.edu.tr/en/persons/koyuncuem" target="_blank" rel="noopener">ITU profile</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- members: rendered from the TEAM array in the script at the bottom -->
+    <div class="team-grid" id="teamGrid"></div>
+
+    <div class="alumni reveal">
+      <h3>Alumni — where they fly now</h3>
+      <div class="alumni-row">
+        <span><b>Barış Başpınar</b> · Istanbul Technical University</span>
+        <span><b>Mevlüt Uzun</b> · Cranfield University</span>
+        <span><b>Emre Saldıran</b> · Cranfield University</span>
+        <span><b>Burak Yüksek</b> · In-Space Missions, UK</span>
+        <span><b>Ali Alizadeh</b> · Torc Robotics</span>
+        <span><b>Utku Eren</b> · University of Washington</span>
+        <span><b>Mert Hasanzade</b></span>
+      </div>
+    </div>
+    <p class="team-note reveal">Current roster and thesis topics are kept up to date by the group —
+    contact us if you are a member and your entry needs an update.</p>
+  </div>
+</section>
+
+<!-- ═════════ PUBLICATIONS ═════════ -->
+<section id="publications">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Publications</p>
+      <h2>Selected publications</h2>
+    </div>
+    <div class="pub-list reveal">
+      <article class="pub">
+        <span class="yr">2025</span>
+        <div>
+          <h3>Integrating AI for Autonomous UAV Traffic Management in Drone Logistic Operations: Challenges, Approaches, and Future Directions</h3>
+          <p class="auth">F. S. Chagas, N. Ruseno, E. Koyuncu, A. A. Arntzen Bechina</p>
+        </div>
+        <span class="venue">IFAC-PapersOnLine</span>
+      </article>
+      <article class="pub">
+        <span class="yr">2024</span>
+        <div>
+          <h3>Neural Network-based UAV System Identification from Sparse Flight Test Data</h3>
+          <p class="auth">E. Ertuğrul, E. Koyuncu</p>
+        </div>
+        <span class="venue">AIAA SciTech Forum</span>
+      </article>
+      <article class="pub">
+        <span class="yr">2024</span>
+        <div>
+          <h3>Model Uncertainty-aware Adaptive Controller Design with Online Parameter Identification</h3>
+          <p class="auth">A. Çatak, A. T. Çetin, E. Koyuncu</p>
+        </div>
+        <span class="venue">AIAA SciTech Forum</span>
+      </article>
+      <article class="pub">
+        <span class="yr">2023</span>
+        <div>
+          <h3>Dynamic Line of Sight Shaping for Impact Time and Angle Control Guidance</h3>
+          <p class="auth">A. Çatak, E. Koyuncu</p>
+        </div>
+        <span class="venue">22nd IFAC World Congress</span>
+      </article>
+      <article class="pub">
+        <span class="yr">2023</span>
+        <div>
+          <h3>Cross Entropy-based Aggressive Flight Trajectory Tracking Optimization</h3>
+          <p class="auth">O. Shadeed, E. Koyuncu</p>
+        </div>
+        <span class="venue">European Control Conference</span>
+      </article>
+      <article class="pub">
+        <span class="yr">2021</span>
+        <div>
+          <h3>A Dynamically Feasible Fast Replanning Strategy with Deep Reinforcement Learning</h3>
+          <p class="auth">B. Başpınar, A. T. Altun, E. Koyuncu</p>
+        </div>
+        <span class="venue">J. Intelligent &amp; Robotic Systems</span>
+      </article>
+      <article class="pub">
+        <span class="yr">2020</span>
+        <div>
+          <h3>Optimization-Based Autonomous Air Traffic Control for Airspace Capacity Improvement</h3>
+          <p class="auth">M. Hasanzade, E. Koyuncu</p>
+        </div>
+        <span class="venue">IEEE Trans. Aerospace &amp; Electronic Systems</span>
+      </article>
+      <article class="pub">
+        <span class="yr">2020</span>
+        <div>
+          <h3>Assessment of Aerial Combat Game via Optimization-Based Receding Horizon Control</h3>
+          <p class="auth">B. Başpınar, E. Koyuncu</p>
+        </div>
+        <span class="venue">IEEE Access</span>
+      </article>
+      <article class="pub">
+        <span class="yr">2011</span>
+        <div>
+          <h3>Probabilistic 4D Conflict Detection and Avoidance Strategy in En-Route Air Traffic</h3>
+          <p class="auth">E. Koyuncu, S. Karaman, E. Frazzoli, G. İnalhan</p>
+        </div>
+        <span class="venue">ATACCS</span>
+      </article>
+    </div>
+    <p class="pub-foot reveal">
+      Full record on
+      <a href="https://scholar.google.com/citations?user=b13mKdoAAAAJ" target="_blank" rel="noopener">Google Scholar</a> and
+      <a href="https://research.itu.edu.tr/en/persons/koyuncuem" target="_blank" rel="noopener">ITU Research</a>.
+    </p>
+  </div>
+</section>
+
+<!-- ═════════ FACILITIES ═════════ -->
+<section id="facilities" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Labs &amp; Facilities</p>
+      <h2>From simulation to the sky</h2>
+    </div>
+    <div class="fac-grid">
+      <article class="fac reveal">
+        <p class="loc">Faculty Building · 312</p>
+        <h3>AIGNC Lab</h3>
+        <p>The group's home base for guidance, navigation and control development — algorithm
+        design, hardware-in-the-loop testing, and avionics integration.</p>
+      </article>
+      <article class="fac reveal">
+        <p class="loc">ARC Building · 101</p>
+        <h3>Cyber Airspace Lab</h3>
+        <p>Large-scale airspace simulation: air traffic network models, U-space services, and
+        human-in-the-loop experiments for future ATM concepts.</p>
+      </article>
+      <article class="fac reveal">
+        <p class="loc">ITU ARC · Field</p>
+        <h3>Flight Test Capability</h3>
+        <p>From agile quadrotors to shape-shifting UAV demonstrators — the group takes its
+        algorithms outdoors and closes the loop on real vehicles.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ JOIN ═════════ -->
+<section id="join">
+  <div class="wrap join-in">
+    <div class="reveal">
+      <p class="eyebrow">Join us</p>
+      <h2>We are recruiting M.Sc. &amp; Ph.D. researchers</h2>
+      <p>If you want to work where control theory, machine learning, and real flight hardware meet,
+      we would like to hear from you. Send your CV, transcript, and a short note on which research
+      line interests you most.</p>
+      <div class="hero-ctas" style="margin-top:22px">
+        <a class="btn primary" href="mailto:emre.koyuncu@itu.edu.tr?subject=AIGNC%20—%20Graduate%20application">Apply by email</a>
+      </div>
+    </div>
+    <div class="join-topics reveal">
+      <span>Optimization-based control</span><span>Reinforcement learning</span>
+      <span>Visual-inertial odometry</span><span>Terrain-referenced navigation</span>
+      <span>Multi-agent systems</span><span>Trajectory optimization</span>
+      <span>Air traffic automation</span><span>U-space services</span><span>Flight testing</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ CONTACT ═════════ -->
+<section id="contact" class="contact alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Contact</p>
+      <h2>Find us</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="block reveal">
+        <h3>Address</h3>
+        <p class="mail"><a href="mailto:emre.koyuncu@itu.edu.tr">emre.koyuncu@itu.edu.tr</a></p>
+        <p style="margin-top:12px">AIGNC Research Group · ITU Aerospace Research Center<br>
+        Istanbul Technical University, Ayazağa Campus<br>
+        Maslak 34469, Istanbul, Türkiye</p>
+      </div>
+      <div class="block reveal">
+        <h3>Online</h3>
+        <div class="linkrow">
+          <a href="https://arc.itu.edu.tr" target="_blank" rel="noopener">ITU ARC</a>
+          <a href="https://scholar.google.com/citations?user=b13mKdoAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://www.researchgate.net/profile/Emre-Koyuncu" target="_blank" rel="noopener">ResearchGate</a>
+          <a href="https://www.linkedin.com/in/koyuncue/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://x.com/koyuncuemr" target="_blank" rel="noopener">X</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot">
+      <span>© <span id="y">2026</span> AIGNC Research Group · ITU Aerospace Research Center</span>
+      <span>Istanbul Technical University</span>
+    </div>
+  </div>
+</section>
+
+<script>
+/* ── TEAM ROSTER ─────────────────────────────────────────────
+   Edit this array to update the team section. Each entry:
+   { name, degree (short label), topics (one line) }              */
+const TEAM = [
+  {name:"Ahmet Talha Çetin", degree:"Aero Eng. · PhD Candidate", topics:"Visual pursuit guidance, visual-guided control"},
+  {name:"Akın Çatak",        degree:"Aero Eng. · PhD Candidate", topics:"Flight envelope protection, impact time/angle guidance"},
+  {name:"Omar Shadeed",      degree:"Aero Eng. · PhD Candidate", topics:"Aggressive trajectory tracking, agile flight control"},
+  {name:"S. E. Seyed Roghani", degree:"PhD Candidate",           topics:"Airspace complexity modelling, U-space integration"},
+  {name:"Ege Can Altunkaya", degree:"Aero Eng. · PhD Student",   topics:"Optimal trajectory generation and control"},
+  {name:"Eren Ertuğrul",     degree:"Aero Eng. · Researcher",    topics:"Learning-based UAV system identification"},
+  {name:"Mustafa Demir",     degree:"Researcher",                topics:"Autonomy and decision systems"},
+  {name:"Ömer Herekoğlu",    degree:"Researcher · ITU ARC",      topics:"UAV systems and flight testing"},
+  {name:"İpek Öşken",        degree:"Researcher",                topics:"U-space services, SESAR projects"},
+  {name:"Zeynep Uygar Yengin", degree:"Researcher",              topics:"Air transportation systems"},
+  {name:"F. Sezenoğlu Çetin", degree:"Researcher",               topics:"Data-driven predictive maintenance"},
+];
+
+const grid = document.getElementById('teamGrid');
+TEAM.forEach(m=>{
+  const initials = m.name.split(' ').filter(w=>w[0]===w[0].toUpperCase()).map(w=>w[0]).slice(0,2).join('');
+  const el = document.createElement('article');
+  el.className = 'member reveal';
+  el.innerHTML = `
+    <div class="avatar sm" aria-hidden="true">${initials}</div>
+    <div>
+      <h4>${m.name}</h4>
+      <p class="deg">${m.degree}</p>
+      <p>${m.topics}</p>
+    </div>`;
+  grid.appendChild(el);
+});
+
+/* footer year */
+document.getElementById('y').textContent = new Date().getFullYear();
+
+/* scroll reveals */
+const io = new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* respect reduced motion for the SMIL plane animation */
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const pm = document.getElementById('planeMotion');
+  if (pm) pm.remove();
+  const plane = document.getElementById('plane');
+  if (plane) plane.setAttribute('transform','translate(1060,49)');
+}
+</script>
+</body>
+</html>
