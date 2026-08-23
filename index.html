@@ -255,8 +255,8 @@ function paras(el,txt){if(!el||!txt)return;el.innerHTML='';String(txt).split(/\n
 function extLink(a,u){if(u){a.href=u;if(/^https?:/i.test(u)){a.target='_blank';a.rel='noopener';}}else{a.href='#news';}}
 
 (async()=>{
-  const [gen,newsD,vidD]=await Promise.all([
-    jload('data-general.json'), jload('data-news.json'), jload('data-videos.json')
+  const [gen,newsD,vidD,teamD]=await Promise.all([
+    jload('data-general.json'), jload('data-news.json'), jload('data-videos.json'), jload('data-team.json')
   ]);
 
   if(gen){ paras(document.getElementById('aboutText'), gen.about);
@@ -289,11 +289,12 @@ function extLink(a,u){if(u){a.href=u;if(/^https?:/i.test(u)){a.target='_blank';a
     f.querySelector('figcaption').textContent=v.caption||''; vg.appendChild(f);
   });
 
+  if(teamD&&teamD.leader_photo){document.querySelectorAll('.pf[data-photo]').forEach(el=>el.dataset.photo=String(teamD.leader_photo));}
   document.querySelectorAll('.pf[data-photo]').forEach(el=>{
     const img=new Image();
     img.onload=()=>{el.textContent='';el.appendChild(img);};
     img.onerror=()=>{el.textContent=el.dataset.initials;};
-    img.src=el.dataset.photo; img.alt='Prof. Dr. Emre Koyuncu';
+    img.src=String(el.dataset.photo).replace(/^\//,''); img.alt='Prof. Dr. Emre Koyuncu';
     el.textContent=el.dataset.initials;
   });
 

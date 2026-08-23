@@ -161,6 +161,7 @@ function photoFrame(el,src,ini,alt){
     });
   }
 
+  if(d&&d.leader_photo){document.querySelectorAll('.pf[data-photo]').forEach(el=>el.dataset.photo=String(d.leader_photo));}
   document.querySelectorAll('.pf[data-photo]').forEach(el=>{
     photoFrame(el, el.dataset.photo, el.dataset.initials, 'Prof. Dr. Emre Koyuncu');
   });
