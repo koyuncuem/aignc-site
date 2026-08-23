@@ -44,6 +44,7 @@
       <a class="btn primary" href="research.html">Research</a>
       <a class="btn" href="team.html">Team</a>
       <a class="btn" href="publications.html">Publications</a>
+      <a class="btn" href="#bio">Biography</a>
     </div>
   </div>
   <div class="skyband" aria-hidden="true">
@@ -127,8 +128,64 @@
   </div>
 </section>
 
+<!-- ═════════ BIOGRAPHY ═════════ -->
+<section class="alt" id="bio">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Biography</p>
+      <h2>Prof. Dr. Emre Koyuncu</h2>
+    </div>
+    <div class="bio-leader">
+      <div class="reveal">
+        <div class="pf lg" data-photo="photos/emre-koyuncu.jpg" data-initials="EK"></div>
+        <div class="quick">
+          <a href="https://scholar.google.com/citations?user=b13mKdoAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://orcid.org/0000-0002-0726-4979" target="_blank" rel="noopener">ORCID</a>
+          <a href="https://www.linkedin.com/in/koyuncue/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://research.itu.edu.tr/en/persons/koyuncuem" target="_blank" rel="noopener">ITU profile</a>
+        </div>
+      </div>
+      <div class="bio-text reveal">
+        <p>
+          Emre Koyuncu is a Professor at Istanbul Technical University's Department of Aeronautical
+          Engineering, the Director of the ITU Aerospace Research Center (ITU ARC), and the head of
+          the AI-based Guidance, Navigation and Control Research Group (AIGNC-RG). He also serves
+          as CTO of CORVUS Advanced Technologies, carrying the group's research across the lab
+          boundary into fielded autonomous systems.
+        </p>
+        <p>
+          He received his B.Sc. in Electrical Engineering (2005) and M.Sc. in Mechatronics
+          Engineering (2008) from ITU, and his Ph.D. in Aerospace Engineering from ITU in 2015 as a
+          SESAR JU HALA! Research Network fellow. He was a visiting researcher at Boeing Research
+          &amp; Technology Europe in Madrid during 2013–2014, and at the Massachusetts Institute of
+          Technology's Department of Aeronautics and Astronautics during 2014–2015.
+        </p>
+        <p>
+          His research interests lie in the broad areas of aeronautics, robotics, navigation, and
+          control theory. In particular, he focuses on the implementation of optimization-based
+          control, reinforcement learning, and probability theory for the design and analysis of
+          high-performance cyber-physical systems. The application areas of his research include
+          agile unmanned aerial vehicles; flight trajectory optimization and planning; airborne
+          conflict detection and resolution; GPS-denied navigation; flight management and decision
+          support systems; high-level autonomy in air traffic control systems; and modeling and
+          resiliency assurance in large-scale air traffic networks.
+        </p>
+        <p>
+          Prof. Koyuncu has led numerous research grants and industrial projects funded by
+          SESAR JU, Boeing, ASELSAN, HAVELSAN, Turkish Aerospace, TÜBİTAK, STM, Turkish Airlines,
+          and iGA. He is an AIAA Associate Fellow (Class of 2026) and an IEEE Senior Member,
+          serves as an Associate Editor of IEEE Access, and contributes to the IEEE CSS Technical
+          Committee on Hybrid Systems and the AIAA Air Transportation Systems Technical Committee.
+          His recognitions include the Boeing Early Career Grant (2015) and ITU's
+          University–Industry Collaboration Award (2025).
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═════════ VIDEOS ═════════ -->
-<section class="alt" id="videos">
+<section id="videos">
   <div class="wrap">
     <div class="sec-head reveal">
       <p class="eyebrow">In flight</p>
@@ -253,6 +310,15 @@ VIDEOS.forEach(v=>{
     : `<div class="ph"><span><b>VIDEO SLOT</b>Paste a YouTube ID in the VIDEOS array in index.html</span></div>`;
   f.innerHTML=`<div class="frame">${inner}</div><figcaption>${v.caption}</figcaption>`;
   vg.appendChild(f);
+});
+
+/* leader photo with initials fallback */
+document.querySelectorAll('.pf[data-photo]').forEach(el=>{
+  const img=new Image();
+  img.onload=()=>{el.textContent='';el.appendChild(img);};
+  img.onerror=()=>{el.textContent=el.dataset.initials;};
+  img.src=el.dataset.photo; img.alt='Prof. Dr. Emre Koyuncu';
+  el.textContent=el.dataset.initials;
 });
 
 /* footer year, reveals, reduced motion */

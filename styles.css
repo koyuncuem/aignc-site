@@ -115,6 +115,14 @@ section{padding:76px 0}
 .host-card .row:first-of-type{border-top:none;padding-top:0}
 .host-card .row b{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;color:var(--blue-deep);min-width:70px;text-transform:uppercase;font-weight:500}
 
+/* biography (index.html) */
+.bio-leader{display:grid;grid-template-columns:250px 1fr;gap:44px;align-items:start}
+.bio-leader .pf.lg{width:100%;height:auto;aspect-ratio:1/1;border-radius:14px;font-size:3rem}
+.bio-leader .quick{display:flex;flex-direction:column;gap:8px;margin-top:14px;font-size:.85rem;font-weight:500}
+.bio-text p{font-size:.98rem}
+.bio-text p:first-child{font-size:1.08rem;line-height:1.7}
+.bio-text p+p{margin-top:14px;color:var(--ink-dim)}
+
 /* research / projects / labs (research.html) */
 .themes{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .theme{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
