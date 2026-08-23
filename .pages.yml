@@ -31,6 +31,9 @@ content:
     type: file
     path: data-team.json
     fields:
+      - name: leader_photo
+        label: Prof. Koyuncu's photo (leader card & homepage biography)
+        type: image
       - name: items
         label: Members
         type: object
