@@ -1,0 +1,116 @@
+media:
+  input: photos
+  output: photos
+
+content:
+  - name: news
+    label: News
+    type: file
+    path: data-news.json
+    fields:
+      - name: items
+        label: News items (newest first)
+        type: object
+        list: true
+        fields:
+          - name: date
+            label: Date (e.g. "Feb 2026" or "2025")
+            type: string
+          - name: title
+            label: Title
+            type: string
+          - name: blurb
+            label: Short summary
+            type: text
+          - name: url
+            label: Link (LinkedIn post, article...)
+            type: string
+
+  - name: team
+    label: Team
+    type: file
+    path: data-team.json
+    fields:
+      - name: items
+        label: Members
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Name
+            type: string
+          - name: degree
+            label: Role / degree (e.g. "Aero Eng. · PhD Candidate")
+            type: string
+          - name: topics
+            label: Research topics
+            type: string
+          - name: photo
+            label: Photo
+            type: image
+      - name: alumni
+        label: Alumni
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Name
+            type: string
+          - name: place
+            label: Now at
+            type: string
+
+  - name: videos
+    label: Videos
+    type: file
+    path: data-videos.json
+    fields:
+      - name: items
+        label: Homepage videos
+        type: object
+        list: true
+        fields:
+          - name: id
+            label: YouTube video ID (the part after watch?v=)
+            type: string
+          - name: caption
+            label: Caption
+            type: string
+
+  - name: publications
+    label: Publications
+    type: file
+    path: data-publications.json
+    fields:
+      - name: items
+        label: Publications
+        type: object
+        list: true
+        fields:
+          - name: year
+            label: Year
+            type: string
+          - name: title
+            label: Title
+            type: string
+          - name: authors
+            label: Authors
+            type: string
+          - name: venue
+            label: Venue (journal / conference)
+            type: string
+          - name: url
+            label: Link (DOI or publisher page, optional)
+            type: string
+
+  - name: general
+    label: Page text
+    type: file
+    path: data-general.json
+    fields:
+      - name: about
+        label: About the group (homepage) — separate paragraphs with a blank line
+        type: text
+      - name: bio
+        label: Biography of Prof. Koyuncu (homepage) — separate paragraphs with a blank line
+        type: text
