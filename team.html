@@ -71,7 +71,7 @@
 
     <div class="alumni reveal">
       <h3>Alumni — where they fly now</h3>
-      <div class="alumni-row">
+      <div class="alumni-row" id="alumniRow">
         <span><b>Barış Başpınar</b> · Istanbul Technical University</span>
         <span><b>Mevlüt Uzun</b> · Cranfield University</span>
         <span><b>Emre Saldıran</b> · Cranfield University</span>
@@ -125,47 +125,50 @@
 </footer>
 
 <script>
-/* ── TEAM ROSTER ─────────────────────────────────────────────
-   One line per member: {name, degree, topics, photo}.
-   Photos: upload images to a "photos/" folder in the repo.
-   If a photo file is missing, initials are shown instead.    */
-const TEAM = [
-  {name:"Ahmet Talha Çetin",  degree:"Aero Eng. · PhD Candidate", topics:"Visual pursuit guidance, visual-guided control",            photo:"photos/ahmet-talha-cetin.jpg"},
-  {name:"Akın Çatak",         degree:"Aero Eng. · PhD Candidate", topics:"Flight envelope protection, impact time/angle guidance",    photo:"photos/akin-catak.jpg"},
-  {name:"Omar Shadeed",       degree:"Aero Eng. · PhD Candidate", topics:"Aggressive trajectory tracking, agile flight control",      photo:"photos/omar-shadeed.jpg"},
-  {name:"S. E. Seyed Roghani",degree:"PhD Candidate",             topics:"Airspace complexity modelling, U-space integration",        photo:"photos/seyed-roghani.jpg"},
-  {name:"Ege Can Altunkaya",  degree:"Aero Eng. · PhD Student",   topics:"Optimal trajectory generation and control",                 photo:"photos/ege-can-altunkaya.jpg"},
-  {name:"Eren Ertuğrul",      degree:"Aero Eng. · Researcher",    topics:"Learning-based UAV system identification",                  photo:"photos/eren-ertugrul.jpg"},
-  {name:"Mustafa Demir",      degree:"Researcher",                topics:"Autonomy and decision systems",                             photo:"photos/mustafa-demir.jpg"},
-  {name:"Ömer Herekoğlu",     degree:"Researcher · ITU ARC",      topics:"UAV systems and flight testing",                            photo:"photos/omer-herekoglu.jpg"},
-  {name:"İpek Öşken",         degree:"Researcher",                topics:"U-space services, SESAR projects",                          photo:"photos/ipek-osken.jpg"},
-  {name:"Zeynep Uygar Yengin",degree:"Researcher",                topics:"Air transportation systems",                                photo:"photos/zeynep-uygar-yengin.jpg"},
-  {name:"F. Sezenoğlu Çetin", degree:"Researcher",                topics:"Data-driven predictive maintenance",                        photo:"photos/sezenoglu-cetin.jpg"},
-];
-
-function photoFrame(el){
-  const src=el.dataset.photo, ini=el.dataset.initials;
-  const img=new Image();
-  img.onload=()=>{el.textContent='';el.appendChild(img);};
-  img.onerror=()=>{el.textContent=ini;};
-  img.src=src; img.alt='';
+async function jload(p){try{const r=await fetch(p,{cache:'no-cache'});if(!r.ok)throw 0;return await r.json();}catch(e){return null;}}
+function initialsOf(n){return String(n).split(' ').filter(w=>w&&w[0]===w[0].toUpperCase()).map(w=>w[0]).slice(0,2).join('')||'?';}
+function photoFrame(el,src,ini,alt){
   el.textContent=ini;
+  if(src){const img=new Image();
+    img.onload=()=>{el.textContent='';el.appendChild(img);};
+    img.onerror=()=>{el.textContent=ini;};
+    img.src=String(src).replace(/^\//,''); img.alt=alt||'';}
 }
-document.querySelectorAll('.pf[data-photo]').forEach(photoFrame);
 
-const grid=document.getElementById('teamGrid');
-TEAM.forEach(m=>{
-  const ini=m.name.split(' ').filter(w=>w[0]===w[0].toUpperCase()).map(w=>w[0]).slice(0,2).join('');
-  const el=document.createElement('article'); el.className='person reveal';
-  el.innerHTML=`<div class="pf sm" data-photo="${m.photo}" data-initials="${ini}"></div>
-    <h4>${m.name}</h4><p class="deg">${m.degree}</p><p>${m.topics}</p>`;
-  grid.appendChild(el);
-  photoFrame(el.querySelector('.pf'));
-});
+(async()=>{
+  const d=await jload('data-team.json');
+  const TEAM=(d&&Array.isArray(d.items))?d.items:[];
+  const ALUMNI=(d&&Array.isArray(d.alumni))?d.alumni:null;
 
-document.getElementById('y').textContent=new Date().getFullYear();
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.1});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  const grid=document.getElementById('teamGrid');
+  TEAM.forEach(m=>{
+    const el=document.createElement('article'); el.className='person reveal';
+    el.innerHTML='<div class="pf sm"></div><h4></h4><p class="deg"></p><p></p>';
+    el.querySelector('h4').textContent=m.name||'';
+    el.querySelector('.deg').textContent=m.degree||'';
+    el.querySelector('p:last-child').textContent=m.topics||'';
+    photoFrame(el.querySelector('.pf'), m.photo, initialsOf(m.name||''), m.name||'');
+    grid.appendChild(el);
+  });
+
+  if(ALUMNI){
+    const row=document.getElementById('alumniRow'); row.innerHTML='';
+    ALUMNI.forEach(a=>{
+      const s=document.createElement('span');
+      const b=document.createElement('b'); b.textContent=a.name||''; s.appendChild(b);
+      if(a.place){s.appendChild(document.createTextNode(' · '+a.place));}
+      row.appendChild(s);
+    });
+  }
+
+  document.querySelectorAll('.pf[data-photo]').forEach(el=>{
+    photoFrame(el, el.dataset.photo, el.dataset.initials, 'Prof. Dr. Emre Koyuncu');
+  });
+
+  document.getElementById('y').textContent=new Date().getFullYear();
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+})();
 </script>
 </body>
 </html>

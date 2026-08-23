@@ -1,0 +1,100 @@
+{
+  "items": [
+    {
+      "name": "Ahmet Talha Çetin",
+      "degree": "Aero Eng. · PhD Candidate",
+      "topics": "Visual pursuit guidance, visual-guided control",
+      "photo": ""
+    },
+    {
+      "name": "Akın Çatak",
+      "degree": "Aero Eng. · PhD Candidate",
+      "topics": "Flight envelope protection, impact time/angle guidance",
+      "photo": ""
+    },
+    {
+      "name": "Omar Shadeed",
+      "degree": "Aero Eng. · PhD Candidate",
+      "topics": "Aggressive trajectory tracking, agile flight control",
+      "photo": ""
+    },
+    {
+      "name": "S. E. Seyed Roghani",
+      "degree": "PhD Candidate",
+      "topics": "Airspace complexity modelling, U-space integration",
+      "photo": ""
+    },
+    {
+      "name": "Ege Can Altunkaya",
+      "degree": "Aero Eng. · PhD Student",
+      "topics": "Optimal trajectory generation and control",
+      "photo": ""
+    },
+    {
+      "name": "Eren Ertuğrul",
+      "degree": "Aero Eng. · Researcher",
+      "topics": "Learning-based UAV system identification",
+      "photo": ""
+    },
+    {
+      "name": "Mustafa Demir",
+      "degree": "Researcher",
+      "topics": "Autonomy and decision systems",
+      "photo": ""
+    },
+    {
+      "name": "Ömer Herekoğlu",
+      "degree": "Researcher · ITU ARC",
+      "topics": "UAV systems and flight testing",
+      "photo": ""
+    },
+    {
+      "name": "İpek Öşken",
+      "degree": "Researcher",
+      "topics": "U-space services, SESAR projects",
+      "photo": ""
+    },
+    {
+      "name": "Zeynep Uygar Yengin",
+      "degree": "Researcher",
+      "topics": "Air transportation systems",
+      "photo": ""
+    },
+    {
+      "name": "F. Sezenoğlu Çetin",
+      "degree": "Researcher",
+      "topics": "Data-driven predictive maintenance",
+      "photo": ""
+    }
+  ],
+  "alumni": [
+    {
+      "name": "Barış Başpınar",
+      "place": "Istanbul Technical University"
+    },
+    {
+      "name": "Mevlüt Uzun",
+      "place": "Cranfield University"
+    },
+    {
+      "name": "Emre Saldıran",
+      "place": "Cranfield University"
+    },
+    {
+      "name": "Burak Yüksek",
+      "place": "In-Space Missions, UK"
+    },
+    {
+      "name": "Ali Alizadeh",
+      "place": "Torc Robotics"
+    },
+    {
+      "name": "Utku Eren",
+      "place": "University of Washington"
+    },
+    {
+      "name": "Mert Hasanzade",
+      "place": ""
+    }
+  ]
+}

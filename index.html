@@ -98,6 +98,7 @@
     <div class="reveal">
       <p class="eyebrow">Who we are</p>
       <h2>Where control theory meets machine intelligence — and flies</h2>
+      <div class="about-dyn" id="aboutText">
       <p class="lede" style="margin-top:16px">
         AIGNC-RG is a research group of the ITU Aerospace Research Center, working at the
         intersection of optimization-based control, reinforcement learning, and probability
@@ -115,6 +116,7 @@
         Director of the ITU Aerospace Research Center, and CTO of CORVUS Advanced Technologies —
         formerly a visiting researcher at Boeing Research &amp; Technology Europe and MIT AeroAstro.
       </p>
+      </div>
     </div>
     <aside class="host-card reveal">
       <h3>At a glance</h3>
@@ -145,7 +147,7 @@
           <a href="https://research.itu.edu.tr/en/persons/koyuncuem" target="_blank" rel="noopener">ITU profile</a>
         </div>
       </div>
-      <div class="bio-text reveal">
+      <div class="bio-text reveal" id="bioText">
         <p>
           Emre Koyuncu is a Professor at Istanbul Technical University's Department of Aeronautical
           Engineering, the Director of the ITU Aerospace Research Center (ITU ARC), and the head of
@@ -248,87 +250,61 @@
 </footer>
 
 <script>
-/* ── NEWS ────────────────────────────────────────────────────
-   Newest first. Each item: {date, title, blurb, url}.
-   Tip: for LinkedIn items use the post's own link
-   (⋯ menu on the post → "Copy link to post").                */
-const NEWS = [
-  {date:"Feb 2026", title:"Prof. Koyuncu appointed Director of the ITU Aerospace Research Center",
-   blurb:"The group's leader takes the helm of ITU's flagship multidisciplinary aerospace research center.",
-   url:"https://www.linkedin.com/in/koyuncue/"},
-  {date:"Feb 2026", title:"AIRMOB — Advanced Air Mobility CoVE kicks off",
-   blurb:"AIGNC leads Türkiye's side of the Erasmus+ Centre of Vocational Excellence for advanced air mobility.",
-   url:"https://www.linkedin.com/in/koyuncue/"},
-  {date:"2026", title:"Prof. Koyuncu elected AIAA Associate Fellow — Class of 2026",
-   blurb:"Recognition by the American Institute of Aeronautics and Astronautics for contributions to aerospace autonomy.",
-   url:"https://www.linkedin.com/in/koyuncue/"},
-  {date:"2025", title:"ITU University–Industry Collaboration Award",
-   blurb:"The ITU ARC × Turkish Aerospace autonomy collaboration is recognized with ITU's 2025 award.",
-   url:"https://www.linkedin.com/in/koyuncue/"},
-  {date:"2025", title:"SESAR 3 JU project on AI for U-space begins",
-   blurb:"European consortium research on automated drone flight-plan approval and strategic deconfliction.",
-   url:"https://www.linkedin.com/in/koyuncue/"},
-  {date:"2024", title:"GPS-independent Anti-UAV drone delivered to ASELSAN",
-   blurb:"AI-based visual target tracking and visual-inertial navigation, validated in flight tests at the Örencik UAV test site.",
-   url:"https://arc.itu.edu.tr/News/gps-independent-anti-uav-drone-project-delivered-to-aselsan.html"},
-  {date:"2024", title:"ASELSAN-supported shape-shifting UAV projects completed",
-   blurb:"Bal-UAV and its Ballistic Launch System complete flight demonstrations — up to five UAVs launched from one system.",
-   url:"https://arc.itu.edu.tr/News/aselsan-supported-uav-projects-successfully-completed.html"},
-];
+async function jload(p){try{const r=await fetch(p,{cache:'no-cache'});if(!r.ok)throw 0;return await r.json();}catch(e){return null;}}
+function paras(el,txt){if(!el||!txt)return;el.innerHTML='';String(txt).split(/\n\s*\n/).forEach(t=>{t=t.trim();if(!t)return;const p=document.createElement('p');p.textContent=t;el.appendChild(p);});}
+function extLink(a,u){if(u){a.href=u;if(/^https?:/i.test(u)){a.target='_blank';a.rel='noopener';}}else{a.href='#news';}}
 
-/* ── VIDEOS ──────────────────────────────────────────────────
-   Paste the YouTube video ID (the part after watch?v=).
-   Leave "PASTE_YOUTUBE_ID" to show a placeholder card.       */
-const VIDEOS = [
-  {id:"PASTE_YOUTUBE_ID", caption:"Bal-UAV — ballistically launched, shape-shifting UAV flight tests"},
-  {id:"PASTE_YOUTUBE_ID", caption:"GPS-independent visual navigation on the Anti-UAV drone"},
-  {id:"PASTE_YOUTUBE_ID", caption:"Inside the Cyber Airspace Lab — U-space simulation"},
-];
+(async()=>{
+  const [gen,newsD,vidD]=await Promise.all([
+    jload('data-general.json'), jload('data-news.json'), jload('data-videos.json')
+  ]);
 
-/* render news teaser (first 3) + full list */
-const tz=document.getElementById('newsTeaser');
-NEWS.slice(0,3).forEach(n=>{
-  const a=document.createElement('a'); a.className='ncard reveal'; a.href=n.url;
-  if(n.url.startsWith('http')) {a.target='_blank'; a.rel='noopener';}
-  a.innerHTML=`<span class="date">${n.date}</span><h3>${n.title}</h3><p>${n.blurb}</p><span class="go">Read more →</span>`;
-  tz.appendChild(a);
-});
-const nl=document.getElementById('newsList');
-NEWS.forEach(n=>{
-  const a=document.createElement('a'); a.className='nrow reveal'; a.href=n.url;
-  if(n.url.startsWith('http')) {a.target='_blank'; a.rel='noopener';}
-  a.innerHTML=`<span class="date">${n.date}</span><span><h3>${n.title}</h3><p>${n.blurb}</p></span><span class="arr">→</span>`;
-  nl.appendChild(a);
-});
+  if(gen){ paras(document.getElementById('aboutText'), gen.about);
+           paras(document.getElementById('bioText'),   gen.bio); }
 
-/* render videos */
-const vg=document.getElementById('videoGrid');
-VIDEOS.forEach(v=>{
-  const f=document.createElement('figure'); f.className='vcard reveal';
-  const inner = v.id && !v.id.includes('PASTE')
-    ? `<iframe src="https://www.youtube-nocookie.com/embed/${v.id}?rel=0" title="${v.caption}" loading="lazy" allowfullscreen allow="accelerometer; encrypted-media; picture-in-picture"></iframe>`
-    : `<div class="ph"><span><b>VIDEO SLOT</b>Paste a YouTube ID in the VIDEOS array in index.html</span></div>`;
-  f.innerHTML=`<div class="frame">${inner}</div><figcaption>${v.caption}</figcaption>`;
-  vg.appendChild(f);
-});
+  const NEWS=(newsD&&Array.isArray(newsD.items)&&newsD.items.length)?newsD.items:[];
+  const tz=document.getElementById('newsTeaser'), nl=document.getElementById('newsList');
+  NEWS.slice(0,3).forEach(n=>{
+    const a=document.createElement('a'); a.className='ncard reveal'; extLink(a,n.url);
+    a.innerHTML='<span class="date"></span><h3></h3><p></p><span class="go">Read more →</span>';
+    a.querySelector('.date').textContent=n.date||''; a.querySelector('h3').textContent=n.title||'';
+    a.querySelector('p').textContent=n.blurb||''; tz.appendChild(a);
+  });
+  NEWS.forEach(n=>{
+    const a=document.createElement('a'); a.className='nrow reveal'; extLink(a,n.url);
+    a.innerHTML='<span class="date"></span><span><h3></h3><p></p></span><span class="arr">→</span>';
+    a.querySelector('.date').textContent=n.date||''; a.querySelector('h3').textContent=n.title||'';
+    a.querySelector('span > p, p').textContent=n.blurb||''; nl.appendChild(a);
+  });
 
-/* leader photo with initials fallback */
-document.querySelectorAll('.pf[data-photo]').forEach(el=>{
-  const img=new Image();
-  img.onload=()=>{el.textContent='';el.appendChild(img);};
-  img.onerror=()=>{el.textContent=el.dataset.initials;};
-  img.src=el.dataset.photo; img.alt='Prof. Dr. Emre Koyuncu';
-  el.textContent=el.dataset.initials;
-});
+  const VIDEOS=(vidD&&Array.isArray(vidD.items)&&vidD.items.length)?vidD.items:[];
+  const vg=document.getElementById('videoGrid');
+  VIDEOS.forEach(v=>{
+    const f=document.createElement('figure'); f.className='vcard reveal';
+    const ok=v.id&&String(v.id).trim()&&!/PASTE/.test(v.id);
+    f.innerHTML='<div class="frame"></div><figcaption></figcaption>';
+    f.querySelector('.frame').innerHTML= ok
+      ? '<iframe src="https://www.youtube-nocookie.com/embed/'+encodeURIComponent(String(v.id).trim())+'?rel=0" loading="lazy" allowfullscreen allow="accelerometer; encrypted-media; picture-in-picture"></iframe>'
+      : '<div class="ph"><span><b>VIDEO SLOT</b>Add a YouTube ID in Pages CMS → Videos</span></div>';
+    f.querySelector('figcaption').textContent=v.caption||''; vg.appendChild(f);
+  });
 
-/* footer year, reveals, reduced motion */
-document.getElementById('y').textContent=new Date().getFullYear();
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.1});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-  const pm=document.getElementById('planeMotion'); if(pm) pm.remove();
-  const p=document.getElementById('plane'); if(p) p.setAttribute('transform','translate(1060,49)');
-}
+  document.querySelectorAll('.pf[data-photo]').forEach(el=>{
+    const img=new Image();
+    img.onload=()=>{el.textContent='';el.appendChild(img);};
+    img.onerror=()=>{el.textContent=el.dataset.initials;};
+    img.src=el.dataset.photo; img.alt='Prof. Dr. Emre Koyuncu';
+    el.textContent=el.dataset.initials;
+  });
+
+  document.getElementById('y').textContent=new Date().getFullYear();
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){
+    const pm=document.getElementById('planeMotion'); if(pm) pm.remove();
+    const p=document.getElementById('plane'); if(p) p.setAttribute('transform','translate(1060,49)');
+  }
+})();
 </script>
 </body>
 </html>

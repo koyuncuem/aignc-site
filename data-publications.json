@@ -1,0 +1,67 @@
+{
+  "items": [
+    {
+      "year": "2025",
+      "title": "Integrating AI for Autonomous UAV Traffic Management in Drone Logistic Operations: Challenges, Approaches, and Future Directions",
+      "authors": "F. S. Chagas, N. Ruseno, E. Koyuncu, A. A. Arntzen Bechina",
+      "venue": "IFAC-PapersOnLine",
+      "url": ""
+    },
+    {
+      "year": "2024",
+      "title": "Neural Network-based UAV System Identification from Sparse Flight Test Data",
+      "authors": "E. Ertuğrul, E. Koyuncu",
+      "venue": "AIAA SciTech Forum",
+      "url": ""
+    },
+    {
+      "year": "2024",
+      "title": "Model Uncertainty-aware Adaptive Controller Design with Online Parameter Identification",
+      "authors": "A. Çatak, A. T. Çetin, E. Koyuncu",
+      "venue": "AIAA SciTech Forum",
+      "url": ""
+    },
+    {
+      "year": "2023",
+      "title": "Dynamic Line of Sight Shaping for Impact Time and Angle Control Guidance",
+      "authors": "A. Çatak, E. Koyuncu",
+      "venue": "22nd IFAC World Congress",
+      "url": ""
+    },
+    {
+      "year": "2023",
+      "title": "Cross Entropy-based Aggressive Flight Trajectory Tracking Optimization",
+      "authors": "O. Shadeed, E. Koyuncu",
+      "venue": "European Control Conference",
+      "url": ""
+    },
+    {
+      "year": "2021",
+      "title": "A Dynamically Feasible Fast Replanning Strategy with Deep Reinforcement Learning",
+      "authors": "B. Başpınar, A. T. Altun, E. Koyuncu",
+      "venue": "J. Intelligent & Robotic Systems",
+      "url": ""
+    },
+    {
+      "year": "2020",
+      "title": "Optimization-Based Autonomous Air Traffic Control for Airspace Capacity Improvement",
+      "authors": "M. Hasanzade, E. Koyuncu",
+      "venue": "IEEE Trans. Aerospace & Electronic Systems",
+      "url": ""
+    },
+    {
+      "year": "2020",
+      "title": "Assessment of Aerial Combat Game via Optimization-Based Receding Horizon Control",
+      "authors": "B. Başpınar, E. Koyuncu",
+      "venue": "IEEE Access",
+      "url": ""
+    },
+    {
+      "year": "2011",
+      "title": "Probabilistic 4D Conflict Detection and Avoidance Strategy in En-Route Air Traffic",
+      "authors": "E. Koyuncu, S. Karaman, E. Frazzoli, G. İnalhan",
+      "venue": "ATACCS",
+      "url": ""
+    }
+  ]
+}
