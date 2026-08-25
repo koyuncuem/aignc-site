@@ -36,9 +36,9 @@
       "topics": "Visual Navigation and Guidance"
     },
     {
-      "name": "Eren Ertuğrul",
-      "degree": "Aero Eng. · Researcher",
-      "topics": "Learning-based UAV system identification"
+      "name": "Huriye Nur Toprak",
+      "degree": "Aero Eng. · PhD Student",
+      "topics": "Certified-Controlled Systems"
     },
     {
       "name": "Mustafa Demir",
@@ -88,6 +88,12 @@
     },
     {
       "name": "Mert Hasanzade"
+    },
+    {
+      "name": "Eren Ertuğrul"
+    },
+    {
+      "name": "Mustafa Demir"
     }
   ]
 }
