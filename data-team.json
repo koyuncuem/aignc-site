@@ -12,12 +12,9 @@
       "topics": "Impact time/angle Controlled Guidance"
     },
     {
-      "name": "Omar Shadeed",
-      "degree": "Aero Eng. · PhD Candidate",
-      "topics": "Aggressive trajectory tracking, agile flight control"
+      "degree": "Aero Eng. · PhD Candidate"
     },
     {
-      "name": "S. E. Seyed Roghani",
       "degree": "PhD Candidate",
       "topics": "Airspace complexity modelling, U-space integration"
     },
@@ -83,7 +80,13 @@
       "place": "University of Washington"
     },
     {
-      "name": "Mert Hasanzade"
+      "name": "Mehmet Hasanzade"
+    },
+    {
+      "name": "Omar Shahed"
+    },
+    {
+      "name": "S. E. Seyed Roghani"
     }
   ]
 }
