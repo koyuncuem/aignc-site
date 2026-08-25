@@ -34,8 +34,22 @@ content:
       - name: leader_photo
         label: Prof. Koyuncu's photo (leader card & homepage biography)
         type: image
+      - name: pmo
+        label: Project Management Office
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Name
+            type: string
+          - name: role
+            label: Role (optional)
+            type: string
+          - name: photo
+            label: Photo
+            type: image
       - name: items
-        label: Members
+        label: Researchers & graduate students
         type: object
         list: true
         fields:
