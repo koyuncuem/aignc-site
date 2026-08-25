@@ -1,77 +1,64 @@
 {
-  "leader_photo": "",
   "pmo": [
     {
       "name": "Dr. İpek Osken",
-      "role": "",
-      "photo": ""
+      "role": "Director, Project Management Office"
     },
     {
       "name": "Ragıp Özdiken",
-      "role": "",
-      "photo": ""
+      "role": "Executive Assistant "
     }
   ],
   "items": [
     {
       "name": "Ahmet Talha Çetin",
       "degree": "Aero Eng. · PhD Candidate",
-      "topics": "Visual pursuit guidance, visual-guided control",
-      "photo": ""
+      "topics": "Visual pursuit guidance, visual-guided control"
     },
     {
       "name": "Akın Çatak",
       "degree": "Aero Eng. · PhD Candidate",
-      "topics": "Flight envelope protection, impact time/angle guidance",
-      "photo": ""
+      "topics": "Flight envelope protection, impact time/angle guidance"
     },
     {
       "name": "Omar Shadeed",
       "degree": "Aero Eng. · PhD Candidate",
-      "topics": "Aggressive trajectory tracking, agile flight control",
-      "photo": ""
+      "topics": "Aggressive trajectory tracking, agile flight control"
     },
     {
       "name": "S. E. Seyed Roghani",
       "degree": "PhD Candidate",
-      "topics": "Airspace complexity modelling, U-space integration",
-      "photo": ""
+      "topics": "Airspace complexity modelling, U-space integration"
     },
     {
       "name": "Ege Can Altunkaya",
       "degree": "Aero Eng. · PhD Student",
-      "topics": "Optimal trajectory generation and control",
-      "photo": ""
+      "topics": "Optimal trajectory generation and control"
     },
     {
       "name": "Eren Ertuğrul",
       "degree": "Aero Eng. · Researcher",
-      "topics": "Learning-based UAV system identification",
-      "photo": ""
+      "topics": "Learning-based UAV system identification"
     },
     {
       "name": "Mustafa Demir",
       "degree": "Researcher",
-      "topics": "Autonomy and decision systems",
-      "photo": ""
+      "topics": "Autonomy and decision systems"
     },
     {
       "name": "Ömer Herekoğlu",
       "degree": "Researcher · ITU ARC",
-      "topics": "UAV systems and flight testing",
-      "photo": ""
+      "topics": "UAV systems and flight testing"
     },
     {
       "name": "Zeynep Uygar Yengin",
       "degree": "Researcher",
-      "topics": "Air transportation systems",
-      "photo": ""
+      "topics": "Air transportation systems"
     },
     {
       "name": "F. Sezenoğlu Çetin",
       "degree": "Researcher",
-      "topics": "Data-driven predictive maintenance",
-      "photo": ""
+      "topics": "Data-driven predictive maintenance"
     }
   ],
   "alumni": [
@@ -100,8 +87,7 @@
       "place": "University of Washington"
     },
     {
-      "name": "Mert Hasanzade",
-      "place": ""
+      "name": "Mert Hasanzade"
     }
   ]
 }
