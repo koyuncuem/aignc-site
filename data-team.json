@@ -83,43 +83,56 @@
   ],
   "alumni": [
     {
-      "name": "Barış Başpınar",
+      "name": "Barış Başpınar (PhD'20)",
       "place": "Istanbul Technical University"
     },
     {
-      "name": "Mevlüt Uzun",
-      "place": "Cranfield University"
+      "name": "Mehmet Hasanzade (PhD'21)",
+      "place": "NATS"
     },
     {
-      "name": "Emre Saldıran",
-      "place": "Cranfield University"
+      "name": "Erfan Roghani (PhD'25)"
     },
     {
-      "name": "Burak Yüksek",
-      "place": "In-Space Missions, UK"
+      "name": "Mustafa Demir (PhD'26)",
+      "place": "Turkish Aerospace Industry"
     },
     {
-      "name": "Ali Alizadeh",
+      "name": "Uygar Yengin (PhD'26)",
+      "place": "TOFAS"
+    },
+    {
+      "name": "Hatice Didem Üzgün (PhD'26)"
+    },
+    {
+      "name": "Omid Fazaeili (MSc'17)"
+    },
+    {
+      "name": "M. Emre Sarıgül (MSc'18)",
+      "place": "TAAC"
+    },
+    {
+      "name": "Ali Alizadeh (MSc'18)",
       "place": "Torc Robotics"
     },
     {
-      "name": "Utku Eren",
-      "place": "University of Washington"
+      "name": "Abdel Salam Bawarshi"
     },
     {
-      "name": "Mert Hasanzade"
+      "name": "Arınç Tutku Altun (MSc'19)",
+      "place": "Boeing"
     },
     {
-      "name": "Eren Ertuğrul"
+      "name": "Halise Türkmen (MSc'19)",
+      "place": "Medipol University"
     },
     {
-      "name": "Mustafa Demir"
+      "name": "Zafer Kaçan (MSc'22)",
+      "place": "Airbus"
     },
     {
-      "name": "Uygar Yengin"
-    },
-    {
-      "name": "Hatice Didem Üzgün"
+      "name": "Omar Shadeed (MSc'24)",
+      "place": "Bombardier"
     }
   ]
 }
