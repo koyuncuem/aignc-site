@@ -165,6 +165,8 @@ section{padding:76px 0}
 .leader .creds{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
 .leader .creds span{font-size:.74rem;font-weight:500;color:var(--ink-dim);border:1px solid var(--line);border-radius:99px;padding:4px 11px}
 .leader .links{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;font-size:.85rem;font-weight:500}
+.team-sub{display:flex;align-items:center;gap:9px;font-family:var(--font-mono);font-size:.72rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-deep);margin:36px 0 16px}
+.team-sub::before{content:"";width:8px;height:8px;flex:none;background:var(--magenta);clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
 .people-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .person{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px;transition:transform .2s ease,box-shadow .2s ease}
 .person:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
@@ -199,7 +201,9 @@ footer{border-top:1px solid var(--line);padding:44px 0 30px;background:#fff}
 @media (max-width:960px){
   .themes,.bio-grid{grid-template-columns:1fr;gap:34px}
   .news-teaser,.video-grid,.projects-grid,.fac-grid{grid-template-columns:1fr 1fr}
-  .people-grid{grid-template-columns:repeat(3,1fr)}
+  .team-sub{display:flex;align-items:center;gap:9px;font-family:var(--font-mono);font-size:.72rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-deep);margin:36px 0 16px}
+.team-sub::before{content:"";width:8px;height:8px;flex:none;background:var(--magenta);clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+.people-grid{grid-template-columns:repeat(3,1fr)}
   .foot-grid{grid-template-columns:1fr 1fr}
   .skyband{height:150px}
 }
@@ -209,7 +213,9 @@ footer{border-top:1px solid var(--line);padding:44px 0 30px;background:#fff}
   .nav-in{padding:0 20px;gap:12px}
   .brand small{display:none}
   .news-teaser,.video-grid,.projects-grid,.fac-grid{grid-template-columns:1fr}
-  .people-grid{grid-template-columns:1fr 1fr}
+  .team-sub{display:flex;align-items:center;gap:9px;font-family:var(--font-mono);font-size:.72rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-deep);margin:36px 0 16px}
+.team-sub::before{content:"";width:8px;height:8px;flex:none;background:var(--magenta);clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+.people-grid{grid-template-columns:1fr 1fr}
   .leader{grid-template-columns:1fr}
   .nrow{grid-template-columns:84px 1fr}
   .nrow .arr{display:none}

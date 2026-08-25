@@ -66,7 +66,10 @@
       </div>
     </article>
 
-    <!-- members grid: rendered from the TEAM array below -->
+    <h3 class="team-sub reveal" id="pmoHead">Project Management Office</h3>
+    <div class="people-grid" id="pmoGrid"></div>
+
+    <h3 class="team-sub reveal">Researchers &amp; Graduate Students</h3>
     <div class="people-grid" id="teamGrid"></div>
 
     <div class="alumni reveal">
@@ -126,7 +129,7 @@
 
 <script>
 async function jload(p){try{const r=await fetch(p,{cache:'no-cache'});if(!r.ok)throw 0;return await r.json();}catch(e){return null;}}
-function initialsOf(n){return String(n).split(' ').filter(w=>w&&w[0]===w[0].toUpperCase()).map(w=>w[0]).slice(0,2).join('')||'?';}
+function initialsOf(n){return String(n).replace(/^Dr\.?\s+/i,'').split(' ').filter(w=>w&&w[0]===w[0].toUpperCase()).map(w=>w[0]).slice(0,2).join('')||'?';}
 function photoFrame(el,src,ini,alt){
   el.textContent=ini;
   if(src){const img=new Image();
@@ -134,23 +137,30 @@ function photoFrame(el,src,ini,alt){
     img.onerror=()=>{el.textContent=ini;};
     img.src=String(src).replace(/^\//,''); img.alt=alt||'';}
 }
+function personCard(name, sub, body, photo){
+  const el=document.createElement('article'); el.className='person reveal';
+  el.innerHTML='<div class="pf sm"></div><h4></h4><p class="deg"></p><p class="pbody"></p>';
+  el.querySelector('h4').textContent=name||'';
+  if(sub){el.querySelector('.deg').textContent=sub;}else{el.querySelector('.deg').remove();}
+  if(body){el.querySelector('.pbody').textContent=body;}else{el.querySelector('.pbody').remove();}
+  photoFrame(el.querySelector('.pf'), photo, initialsOf(name||''), name||'');
+  return el;
+}
 
 (async()=>{
   const d=await jload('data-team.json');
+  if(d&&d.leader_photo){document.querySelectorAll('.pf[data-photo]').forEach(el=>el.dataset.photo=String(d.leader_photo));}
+
+  const PMO=(d&&Array.isArray(d.pmo))?d.pmo:[];
+  const pg=document.getElementById('pmoGrid'), ph=document.getElementById('pmoHead');
+  if(PMO.length){PMO.forEach(m=>pg.appendChild(personCard(m.name, m.role||'Project Management Office', '', m.photo)));}
+  else{pg.style.display='none'; if(ph) ph.style.display='none';}
+
   const TEAM=(d&&Array.isArray(d.items))?d.items:[];
-  const ALUMNI=(d&&Array.isArray(d.alumni))?d.alumni:null;
-
   const grid=document.getElementById('teamGrid');
-  TEAM.forEach(m=>{
-    const el=document.createElement('article'); el.className='person reveal';
-    el.innerHTML='<div class="pf sm"></div><h4></h4><p class="deg"></p><p></p>';
-    el.querySelector('h4').textContent=m.name||'';
-    el.querySelector('.deg').textContent=m.degree||'';
-    el.querySelector('p:last-child').textContent=m.topics||'';
-    photoFrame(el.querySelector('.pf'), m.photo, initialsOf(m.name||''), m.name||'');
-    grid.appendChild(el);
-  });
+  TEAM.forEach(m=>grid.appendChild(personCard(m.name, m.degree, m.topics, m.photo)));
 
+  const ALUMNI=(d&&Array.isArray(d.alumni))?d.alumni:null;
   if(ALUMNI){
     const row=document.getElementById('alumniRow'); row.innerHTML='';
     ALUMNI.forEach(a=>{
@@ -161,7 +171,6 @@ function photoFrame(el,src,ini,alt){
     });
   }
 
-  if(d&&d.leader_photo){document.querySelectorAll('.pf[data-photo]').forEach(el=>el.dataset.photo=String(d.leader_photo));}
   document.querySelectorAll('.pf[data-photo]').forEach(el=>{
     photoFrame(el, el.dataset.photo, el.dataset.initials, 'Prof. Dr. Emre Koyuncu');
   });
