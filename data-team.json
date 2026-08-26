@@ -12,14 +12,19 @@
   ],
   "items": [
     {
+      "name": "Akın Çatak",
+      "degree": "Aero Eng. · PhD Candidate",
+      "topics": "Impact Time/Angle Controlled Guidance"
+    },
+    {
       "name": "Ahmet Talha Çetin",
       "degree": "Aero Eng. · PhD Candidate",
       "topics": "RL-based Mission Planning, Multi-Agent Systems"
     },
     {
-      "name": "Akın Çatak",
-      "degree": "Aero Eng. · PhD Candidate",
-      "topics": "Impact Time/Angle Controlled Guidance"
+      "name": "Fatih Erol",
+      "degree": "Defence Tech. · PhD Student",
+      "topics": "RL-based Mission Planning"
     },
     {
       "name": "Serkan Şenel",
@@ -42,6 +47,26 @@
       "topics": "Certified-Controlled Systems"
     },
     {
+      "name": "Meltem Burgu",
+      "degree": "Aero Eng. · MSc Student",
+      "topics": "Unmanned Traffic Management"
+    },
+    {
+      "name": "Samet Kaplan",
+      "degree": "Aero Eng. · MSc Student",
+      "topics": "Magnetic Navigation"
+    },
+    {
+      "name": "Hasan Taha Bağcı",
+      "degree": "Comp. Sc. · MSc Student",
+      "topics": "Guidance with Visual Language Model"
+    },
+    {
+      "name": "Muhammed Osman Aydemir",
+      "degree": "Defence Tech. · MSc Student",
+      "topics": "Magnetic Navigation"
+    },
+    {
       "name": "Samer Raed Aldabbas",
       "degree": "Aero Eng. · PhD Student",
       "topics": "Differentially Flat Trajectory Generation"
@@ -57,34 +82,9 @@
       "topics": "RL-based Flight Upset Recovery"
     },
     {
-      "name": "Fatih Erol",
-      "degree": "Defence Tech. · PhD Student",
-      "topics": "RL-based Mission Planning"
-    },
-    {
-      "name": "Hasan Taha Bağcı",
-      "degree": "Comp. Sc. · MSc Student",
-      "topics": "Guidance with Visual Language Model"
-    },
-    {
-      "name": "Muhammed Osman Aydemir",
-      "degree": "Defence Tech. · MSc Student",
-      "topics": "Magnetic Navigation"
-    },
-    {
       "name": "Kadir Doğan",
       "degree": "Defence Tech. · MSc Student",
       "topics": "Visual Guidance"
-    },
-    {
-      "name": "Meltem Burgu",
-      "degree": "Aero Eng. · MSc Student",
-      "topics": "Unmanned Traffic Management"
-    },
-    {
-      "name": "Samet Kaplan",
-      "degree": "Aero Eng. · MSc Student",
-      "topics": "Magnetic Navigation"
     }
   ],
   "alumni": [
