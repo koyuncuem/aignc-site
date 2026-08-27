@@ -47,6 +47,11 @@
       "topics": "Certified-Controlled Systems"
     },
     {
+      "name": "Muhammet Aksoy",
+      "degree": "Aero Eng. · PhD Student",
+      "topics": "Agentic AI"
+    },
+    {
       "name": "Meltem Burgu",
       "degree": "Aero Eng. · MSc Student",
       "topics": "Unmanned Traffic Management"
@@ -85,11 +90,6 @@
       "name": "Kadir Doğan",
       "degree": "Defence Tech. · MSc Student",
       "topics": "Visual Guidance"
-    },
-    {
-      "name": "Muhammet Aksoy",
-      "degree": "Aero Eng. · PhD Student",
-      "topics": "Agentic AI"
     }
   ],
   "alumni": [
