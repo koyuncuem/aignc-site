@@ -331,11 +331,11 @@ window.AIGNC_CONTENT = {
     },
     {
       "title": "Intelligent Navigation",
-      "text": "Navigation that survives losing GPS — visual, inertial, terrain-referenced, and collaborative approaches for single vehicles and teams.",
+      "text": "Navigation that survives losing GNSS — visual, inertial, terrain-referenced, and collaborative approaches for single vehicles and teams.",
       "topics": "Visual-inertial navigation, Visual-guided control, Terrain-referenced navigation, Collaborative navigation, GPS-denied operations, Visual pursuit guidance"
     },
     {
-      "title": "Airspace Autonomy — ATM / UTM",
+      "title": "Airspace Autonomy",
       "text": "High-level autonomy for the airspace itself: from AI-driven traffic network models to automated U-space services for uncrewed aviation.",
       "topics": "AI-driven air traffic network models, Airspace complexity modelling, Dynamic sectorization, Autonomous flight-plan approval, Strategic deconfliction, 4D trajectory management, Network resilience, Turnaround visual intelligence"
     },
