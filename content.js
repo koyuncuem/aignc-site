@@ -424,8 +424,8 @@ window.AIGNC_CONTENT = {
   "labs": [
     {
       "name": "Cyber Airspace Lab",
-      "location": "ARC Building · 101",
-      "text": "The group's home base for guidance, navigation and control development — algorithm design, hardware-in-the-loop testing, and avionics integration."
+      "location": "İTÜ ARC Building · 101",
+      "text": "The group's home base for guidance, navigation and control development — algorithm design, hardware-in-the-loop testing, and avionics integration. The lab houses a motion capture system with indoor test site and Hurjet Flight Test Simulator."
     },
     {
       "name": "UAV Design and Integration Lab",
