@@ -423,17 +423,22 @@ window.AIGNC_CONTENT = {
   ],
   "labs": [
     {
-      "name": "AIGNC Lab",
-      "location": "Faculty Building · 312",
+      "name": "Cyber Airspace Lab",
+      "location": "ARC Building · 101",
       "text": "The group's home base for guidance, navigation and control development — algorithm design, hardware-in-the-loop testing, and avionics integration."
     },
     {
-      "name": "Cyber Airspace Lab",
-      "location": "ARC Building · 101",
+      "name": "UAV Design and Integration Lab",
+      "location": "İTÜ ARC · 111",
+      "text": "Mechanical design, prototyping, and avionics integration facility for UAVs, encompassing various drones, fixed-wing aircraft, and rockets."
+    },
+    {
+      "name": "AIGNC Lab",
+      "location": "UUBF Faculty Building · 312",
       "text": "Large-scale airspace simulation: air traffic network models, U-space services, and human-in-the-loop experiments for future ATM concepts."
     },
     {
-      "name": "UAV Test Site",
+      "name": "UAV Flight Test Site",
       "location": "Örencik",
       "text": "The group's outdoor proving ground — from agile quadrotors to shape-shifting UAV demonstrators, algorithms close the loop on real vehicles here."
     }
