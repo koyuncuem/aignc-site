@@ -45,7 +45,7 @@ window.AIGNC_CONTENT = {
     },
     {
       "date": "Sep 2026",
-      "title": "SESAR 3 JU Project ATMOSPHER kicks off",
+      "title": "A new SESAR 3 JU Project ATMOSPHER kicks off",
       "blurb": "The ATMOSPHER project, whose consortium includes the ITU ARC, has been awarded funding under the SESAR 3 Joint Undertaking call HORIZON-SESAR-2025-DES-IR-02-WA3-1 within the European Union’s Horizon Europe Programme. Coordinated by Leonardo S.p.A. (Italy), the 36-month project brings together 45 organizations from 14 EU Member States. ATMOSPHER focuses on solutions that will support the transformation of Europe’s air traffic management system and targets to reach TRL 6.",
       "url": "https://www.linkedin.com/in/koyuncue/"
     },
