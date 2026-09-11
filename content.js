@@ -476,34 +476,28 @@ window.AIGNC_CONTENT = {
   ],
   "partners": [
     {
-      "name": "SESAR JU"
+      "name": "Turkish Aerospace Industry"
     },
     {
-      "name": "Boeing"
+      "name": "SESAR JU"
     },
     {
       "name": "ASELSAN"
     },
     {
-      "name": "Turkish Aerospace"
+      "name": "ROKETSAN"
     },
     {
       "name": "HAVELSAN"
     },
     {
-      "name": "STM"
+      "name": "Boeing"
     },
     {
       "name": "TÜBİTAK"
     },
     {
       "name": "Turkish Airlines"
-    },
-    {
-      "name": "iGA"
-    },
-    {
-      "name": "EUROCONTROL"
     }
   ],
   "labs": [
