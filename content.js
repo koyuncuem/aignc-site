@@ -28,10 +28,6 @@ window.AIGNC_CONTENT = {
       "url": "https://www.linkedin.com/in/koyuncue/"
     },
     {
-      "label": "ITU profile",
-      "url": "https://research.itu.edu.tr/en/persons/koyuncuem"
-    },
-    {
       "label": "X",
       "url": "https://x.com/koyuncuemr"
     }
@@ -40,37 +36,11 @@ window.AIGNC_CONTENT = {
     "about": "AIGNC-RG is a research group of the ITU Aerospace Research Center, working at the intersection of optimization-based control, reinforcement learning, and probability theory for high-performance aerospace systems.\n\nOur research spans highly agile unmanned aerial vehicles, GPS-denied navigation, flight trajectory optimization, airborne conflict detection and resolution, and high-level autonomy in air/unmanned traffic management — carried from theory through simulation to flight test. We collaborate closely with ATM research programs and the aerospace industry from Turkiye, the Middle East, and Europe.\n\nThe group is led by Prof. Dr. Emre Koyuncu, Professor of Aeronautical Engineering, Director of the ITU Aerospace Research Center, and CTO of CORVUS Advanced Technologies.",
     "bio": "Emre Koyuncu is a Professor at Istanbul Technical University's Department of Aeronautical Engineering, the Director of the ITU Aerospace Research Center (ITU ARC), and the head of the AI-based Guidance, Navigation and Control Research Group (AIGNC-RG). He also serves as CTO of CORVUS Advanced Technologies, carrying the group's research across the lab boundary into fielded autonomous systems.\n\nHe received his Ph.D. in Aerospace Engineering from ITU in 2015 as a SESAR JU HALA! Research Network fellow. He was a visiting researcher at Boeing Research & Technology Europe in Madrid during 2013–2014, and at the Massachusetts Institute of Technology's Department of Aeronautics and Astronautics during 2014–2015.\n\nHis research interests lie in the broad areas of aeronautics, robotics, navigation, guidance and control theory. In particular, he focuses on the implementation of optimization-based control, reinforcement learning, and probability theory for the design and analysis of high-performance cyber-physical systems. The application areas of his research include agile unmanned aerial vehicles; flight trajectory optimization and planning; airborne conflict detection and resolution; GNNS-denied navigation; flight management and decision support systems; high-level autonomy in air/unmanned traffic control systems; and modeling and resiliency assurance in large-scale air traffic networks.\n\nProf. Koyuncu has led numerous research grants and industrial projects funded by SESAR JU, Boeing, ASELSAN, HAVELSAN, Turkish Aerospace Industry (TAI), TÜBİTAK, STM, Turkish Airlines, and iGA. He is an IEEE Senior Member and an AIAA Senior member, and contributes to the IEEE CSS TC on Hybrid Systems, the IEEE RAS TC on Multi-Robot Systems and on Aerial Robotics and Unmanned Aerial Vehicles, the AIAA Air Transportation Systems TC, IFAC TC 2.4 on Optimal Control, and the CANSO CATS Advanced Air Mobility TC, alongside membership of the Association for the Scientific Development of ATM in Europe (ASDA). His recognitions include the Boeing Early Career Grant (2015) and ITU's University–Industry Collaboration Award (2025). He has also held advisory roles with the Presidency of the Republic of Türkiye, Turkish Aerospace Industries (TAI), and DeltaV, and currently advises Fergani Space of the Baykar Group and Mechanical and Chemical Industry (MKE) of the Ministry of National Defence."
   },
-  "glance": [
-    {
-      "label": "Host",
-      "value": "ITU Aerospace Research Center (ITU ARC)"
-    },
-    {
-      "label": "Leader",
-      "value": "Prof. Dr. Emre Koyuncu"
-    },
-    {
-      "label": "Labs",
-      "value": "AIGNC Lab · Cyber Airspace Lab · Örencik UAV Test Site"
-    },
-    {
-      "label": "Focus",
-      "value": "Autonomy · GNC · AI · ATM/UTM"
-    },
-    {
-      "label": "Programs",
-      "value": "SESAR 3 JU · Erasmus+ CoVE · ASELSAN · TÜBİTAK"
-    },
-    {
-      "label": "Alumni at",
-      "value": "Cranfield · Torc Robotics · UW · industry & academia"
-    }
-  ],
   "news": [
     {
-      "date": "Feb 2026",
-      "title": "Prof. Koyuncu appointed Director of the ITU Aerospace Research Center",
-      "blurb": "The group's leader takes the helm of ITU's flagship multidisciplinary aerospace research center.",
+      "date": "Sep 2026",
+      "title": "SESAR 3 JU Project ATMOSPHER kicks off",
+      "blurb": "The ATMOSPHER project, whose consortium includes the Istanbul Technical University Aviation Research Center (ITU ARC), has been awarded funding under the SESAR 3 Joint Undertaking call HORIZON-SESAR-2025-DES-IR-02-WA3-1 within the European Union’s Horizon Europe Programme. Coordinated by Leonardo S.p.A. (Italy), the 36-month project brings together 45 organizations from 14 EU Member States, as well as the United Kingdom, Switzerland, and Türkiye. The consortium includes leading organizations in the air traffic management (ATM) ecosystem, such as EUROCONTROL, Airbus, NATS, Skyguide, PANSA, Frequentis, Zurich Airport, Swiss International Air Lines, DHMI, and TÜBİTAK BİLGEM.\n\nATMOSPHER focuses on solutions that will support the transformation of Europe’s air traffic management system. These include next-generation service-oriented and interoperable air traffic control platforms, the advanced Trajectory-Based Operations (TBO) concept, the integration of dynamic airspace configuration with demand–capacity balancing, multi-constraint reconciliation mechanisms, automated scenario management, dynamic route allocation, and cross-border mission trajectory management based on civil–military cooperation. The solutions, which are targeted to reach Technology Readiness Level 6 (TRL 6), are expected to contribute to a safer, greener, and more resilient European airspace infrastructure.\n\nITU ARC will contribute to the design and validation of two technical solutions. Under “TBO on Connected Platforms,” it will support cross-border TBO validation exercises along the Türkiye–Bulgaria corridor. Under “Multi-constraint Reconciliation,” it will participate in validating a Trustworthy AI-based DCB Solver concept designed to enhance demand–capacity balancing at both local and network levels. These activities will bring ITU ARC’s expertise in autonomous systems, air traffic management, and air navigation into one of Europe’s strategic ATM research programmes. At the same time, collaboration with DHMI and TÜBİTAK BİLGEM will strengthen Türkiye’s capacity to develop sovereign civil aviation infrastructure.",
       "url": "https://www.linkedin.com/in/koyuncue/"
     },
     {
