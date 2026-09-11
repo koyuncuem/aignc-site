@@ -38,15 +38,9 @@ window.AIGNC_CONTENT = {
   },
   "news": [
     {
-      "date": "Sep 2026",
-      "title": "AIGNC Kicks Off New R&D Phase with TUSAŞ on Advanced Motion Planning",
-      "blurb": "Started a new R&D phase with TUSAŞ, building on the TM1071 project on advanced motion planning for autonomous ground collision avoidance and terrain following. The work restructures nine algorithm functions for next generation fighter aircraft — covering terrain-referenced navigation in GNSS-denied conditions, terrain-following trajectory generation, and AI-based auto-GCAS — into independently packaged modules, preparing them for the next stage of technology maturation.",
-      "url": ""
-    },
-    {
-      "date": "Sep 2026",
-      "title": "A new SESAR 3 JU Project ATMOSPHER kicks off",
-      "blurb": "The ATMOSPHER project, whose consortium includes the ITU ARC, has been awarded funding under the SESAR 3 Joint Undertaking call HORIZON-SESAR-2025-DES-IR-02-WA3-1 within the European Union’s Horizon Europe Programme. Coordinated by Leonardo S.p.A. (Italy), the 36-month project brings together 45 organizations from 14 EU Member States. ATMOSPHER focuses on solutions that will support the transformation of Europe’s air traffic management system and targets to reach TRL 6.",
+      "date": "Feb 2026",
+      "title": "Prof. Koyuncu appointed Director of the ITU Aerospace Research Center",
+      "blurb": "The group's leader takes the helm of ITU's flagship multidisciplinary aerospace research center.",
       "url": "https://www.linkedin.com/in/koyuncue/"
     },
     {
@@ -266,11 +260,88 @@ window.AIGNC_CONTENT = {
   },
   "publications": [
     {
+      "year": "2026",
+      "title": "TANGO-VIO: Triangulation-Aware Navigation with Guaranteed Feature-Observability for Visual-Inertial Odometry",
+      "authors": "EC Altunkaya, A Şanlan, E Koyuncu, İ Özkol",
+      "venue": "arXiv preprint arXiv:2608.02079",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=b13mKdoAAAAJ&sortby=pubdate&citation_for_view=b13mKdoAAAAJ:2KloaMYe4IUC"
+    },
+    {
+      "year": "2026",
+      "title": "Beyond Visual Range Missile Evasion with Model-based Reinforcement Learning",
+      "authors": "AT Çetin, E Koyuncu",
+      "venue": "2026 12th International Conference on Control, Decision and Information Technologies (CoDIT)",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=b13mKdoAAAAJ&sortby=pubdate&citation_for_view=b13mKdoAAAAJ:hkOj_22Ku90C"
+    },
+    {
+      "year": "2026",
+      "title": "Trajectory Generation in 3D under Arbitrary Bounds on Curvature and Higher-Order Curvature Derivatives",
+      "authors": "SR Aldabbas, AT Çetin, M Abu-Khalaf, E Koyuncu",
+      "venue": "IEEE Robotics and Automation Letters",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=b13mKdoAAAAJ&sortby=pubdate&citation_for_view=b13mKdoAAAAJ:tKAzc9rXhukC"
+    },
+    {
+      "year": "2026",
+      "title": "Three-Dimensional Impact Time and Angle Computational Guidance Under Varying Missile Speed",
+      "authors": "A Çatak, E Demir, R Tekin, E Koyuncu, İ Özkol",
+      "venue": "Journal of Guidance, Control, and Dynamics 49 (5), 1533-1544",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=b13mKdoAAAAJ&sortby=pubdate&citation_for_view=b13mKdoAAAAJ:dQ2og3OwTAUC"
+    },
+    {
+      "year": "2026",
+      "title": "Aircraft Stability and Safety: Practical Applications of Control Lyapunov and Barrier Functions",
+      "authors": "EÇ Altunkaya, A Çatak, M Demir, E Koyuncu, İ Özkol",
+      "venue": "Journal of Guidance, Control, and Dynamics 49 (3), 836-851",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=b13mKdoAAAAJ&sortby=pubdate&citation_for_view=b13mKdoAAAAJ:eMMeJKvmdy0C"
+    },
+    {
+      "year": "2026",
+      "title": "Data-driven predictive maintenance for aircraft components through sparse event logs",
+      "authors": "F Sezenoğlu Çetin, U Üngör, E Koyuncu, İ Özkol",
+      "venue": "Aerospace 13 (1), 110",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=b13mKdoAAAAJ&sortby=pubdate&citation_for_view=b13mKdoAAAAJ:PELIpwtuRlgC"
+    },
+    {
+      "year": "2025",
+      "title": "Rapid Flight Trajectory Planning for Autonomous Terrain Avoidance via Generative Learning",
+      "authors": "AT Çetin, SR Aldabbas, M Abu-Khalaf, E Koyuncu",
+      "venue": "2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=b13mKdoAAAAJ&sortby=pubdate&citation_for_view=b13mKdoAAAAJ:_B80troHkn4C"
+    },
+    {
+      "year": "2025",
+      "title": "Cooperative Terrain-Based GNSS-Denied Navigation With Particle Filter",
+      "authors": "ZU Yengin, E Koyuncu",
+      "venue": "IEEE Access 13, 106129-106139",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=b13mKdoAAAAJ&sortby=pubdate&citation_for_view=b13mKdoAAAAJ:wbdj-CoPYUoC"
+    },
+    {
+      "year": "2025",
+      "title": "An explainable and fair hierarchical rl-based alternative trajectory proposal framework for autonomous u-plan approval in u-space",
+      "authors": "SES Roghani, E Koyuncu",
+      "venue": "2025 Integrated Communications, Navigation and Surveillance Conference (ICNS)",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=b13mKdoAAAAJ&sortby=pubdate&citation_for_view=b13mKdoAAAAJ:1qzjygNMrQYC"
+    },
+    {
+      "year": "2025",
+      "title": "Loss-of-Control Prevention of an Agile Aircraft: Dynamic Command Saturation Approach",
+      "authors": "E Ç. Altunkaya, A Çatak, E Koyuncu, İ Özkol",
+      "venue": "Journal of Guidance, Control, and Dynamics 48 (2), 424-436",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=b13mKdoAAAAJ&sortby=pubdate&citation_for_view=b13mKdoAAAAJ:08ZZubdj9fEC"
+    },
+    {
       "year": "2025",
       "title": "Integrating AI for Autonomous UAV Traffic Management in Drone Logistic Operations: Challenges, Approaches, and Future Directions",
       "authors": "F. S. Chagas, N. Ruseno, E. Koyuncu, A. A. Arntzen Bechina",
       "venue": "IFAC-PapersOnLine",
       "url": ""
+    },
+    {
+      "year": "2024",
+      "title": "Stochastic Trajectory and Robust Controller Optimization via Contractive Optimal Control",
+      "authors": "A Selim, AT Cetin, I Ozkol, E Koyuncu",
+      "venue": "AIAA SCITECH 2024 Forum, 2069",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=b13mKdoAAAAJ&cstart=20&pagesize=80&sortby=pubdate&citation_for_view=b13mKdoAAAAJ:738O_yMBCRsC"
     },
     {
       "year": "2024",
@@ -288,6 +359,13 @@ window.AIGNC_CONTENT = {
     },
     {
       "year": "2023",
+      "title": "Model predictive control-based guidance with impact angle constraints for visual quadrotor interception",
+      "authors": "AT Çetin, E Koyuncu",
+      "venue": "2023 9th International Conference on Control, Decision and Information Technologies (CoDIT)",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=b13mKdoAAAAJ&cstart=20&pagesize=80&sortby=pubdate&citation_for_view=b13mKdoAAAAJ:uWQEDVKXjbEC"
+    },
+    {
+      "year": "2023",
       "title": "Dynamic Line of Sight Shaping for Impact Time and Angle Control Guidance",
       "authors": "A. Çatak, E. Koyuncu",
       "venue": "22nd IFAC World Congress",
@@ -299,6 +377,13 @@ window.AIGNC_CONTENT = {
       "authors": "O. Shadeed, E. Koyuncu",
       "venue": "European Control Conference",
       "url": ""
+    },
+    {
+      "year": "2022",
+      "title": "Data-driven uncertainty quantification and propagation for probabilistic trajectory planning",
+      "authors": "A Munoz, M Polaina, A Guemes, J Pons, X Prats, E Koyuncu, D Delahaye, R Zopp, A Kuenz, M Soler",
+      "venue": "12th EASN International Conference on Innovation in Aviation and Space for opening New Horizons",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=b13mKdoAAAAJ&cstart=20&pagesize=80&sortby=pubdate&citation_for_view=b13mKdoAAAAJ:abG-DnoFyZgC"
     },
     {
       "year": "2021",
@@ -331,17 +416,17 @@ window.AIGNC_CONTENT = {
   ],
   "researchLines": [
     {
-      "title": "Flight Guidance & Control",
+      "title": "Guidance & Flight Control",
       "text": "Optimization-based and learning-based control for agile flight — keeping high-performance vehicles safe at the edge of their envelope.",
       "topics": "Model predictive control, Agile guidance algorithms, Optimal trajectory generation, Flight envelope protection, Auto-GCAS, Terrain following control, Impact time/angle control, Integral RL control, System-ID-based control"
     },
     {
       "title": "Intelligent Navigation",
-      "text": "Navigation that survives losing GNSS — visual, inertial, terrain-referenced, and collaborative approaches for single vehicles and teams.",
+      "text": "Navigation that survives losing GPS — visual, inertial, terrain-referenced, and collaborative approaches for single vehicles and teams.",
       "topics": "Visual-inertial navigation, Visual-guided control, Terrain-referenced navigation, Collaborative navigation, GPS-denied operations, Visual pursuit guidance"
     },
     {
-      "title": "Airspace Autonomy",
+      "title": "Airspace Autonomy — ATM / UTM",
       "text": "High-level autonomy for the airspace itself: from AI-driven traffic network models to automated U-space services for uncrewed aviation.",
       "topics": "AI-driven air traffic network models, Airspace complexity modelling, Dynamic sectorization, Autonomous flight-plan approval, Strategic deconfliction, 4D trajectory management, Network resilience, Turnaround visual intelligence"
     },
@@ -423,22 +508,17 @@ window.AIGNC_CONTENT = {
   ],
   "labs": [
     {
-      "name": "Cyber Airspace Lab",
-      "location": "İTÜ ARC Building · 101",
-      "text": "The group's home base for guidance, navigation and control development — algorithm design, hardware-in-the-loop testing, and avionics integration. The lab houses a motion capture system with indoor test site and Hurjet Flight Test Simulator."
-    },
-    {
-      "name": "UAV Design and Integration Lab",
-      "location": "İTÜ ARC · 111",
-      "text": "Mechanical design, prototyping, and avionics integration facility for UAVs, encompassing various drones, fixed-wing aircraft, and rockets."
-    },
-    {
       "name": "AIGNC Lab",
-      "location": "UUBF Faculty Building · 312",
+      "location": "Faculty Building · 312",
+      "text": "The group's home base for guidance, navigation and control development — algorithm design, hardware-in-the-loop testing, and avionics integration."
+    },
+    {
+      "name": "Cyber Airspace Lab",
+      "location": "ARC Building · 101",
       "text": "Large-scale airspace simulation: air traffic network models, U-space services, and human-in-the-loop experiments for future ATM concepts."
     },
     {
-      "name": "UAV Flight Test Site",
+      "name": "UAV Test Site",
       "location": "Örencik",
       "text": "The group's outdoor proving ground — from agile quadrotors to shape-shifting UAV demonstrators, algorithms close the loop on real vehicles here."
     }
