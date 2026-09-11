@@ -39,6 +39,12 @@ window.AIGNC_CONTENT = {
   "news": [
     {
       "date": "Sep 2026",
+      "title": "AIGNC Kicks Off New R&D Phase with TUSAŞ on Advanced Motion Planning",
+      "blurb": "Started a new R&D phase with TUSAŞ, building on the TM1071 project on advanced motion planning for autonomous ground collision avoidance and terrain following. The work restructures nine algorithm functions for next generation fighter aircraft — covering terrain-referenced navigation in GNSS-denied conditions, terrain-following trajectory generation, and AI-based auto-GCAS — into independently packaged modules, preparing them for the next stage of technology maturation.",
+      "url": ""
+    },
+    {
+      "date": "Sep 2026",
       "title": "SESAR 3 JU Project ATMOSPHER kicks off",
       "blurb": "The ATMOSPHER project, whose consortium includes the ITU ARC, has been awarded funding under the SESAR 3 Joint Undertaking call HORIZON-SESAR-2025-DES-IR-02-WA3-1 within the European Union’s Horizon Europe Programme. Coordinated by Leonardo S.p.A. (Italy), the 36-month project brings together 45 organizations from 14 EU Member States. ATMOSPHER focuses on solutions that will support the transformation of Europe’s air traffic management system and targets to reach TRL 6.",
       "url": "https://www.linkedin.com/in/koyuncue/"
