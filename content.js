@@ -325,7 +325,7 @@ window.AIGNC_CONTENT = {
   ],
   "researchLines": [
     {
-      "title": "Guidance & Flight Control",
+      "title": "Flight Guidance & Control",
       "text": "Optimization-based and learning-based control for agile flight — keeping high-performance vehicles safe at the edge of their envelope.",
       "topics": "Model predictive control, Agile guidance algorithms, Optimal trajectory generation, Flight envelope protection, Auto-GCAS, Terrain following control, Impact time/angle control, Integral RL control, System-ID-based control"
     },
